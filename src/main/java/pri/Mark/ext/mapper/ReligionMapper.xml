@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.ReligionMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Religion" >
+    <id column="religion_id" property="religionId" jdbcType="INTEGER" />
+    <result column="religion_name" property="religionName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    religion_id, religion_name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.ReligionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from religion
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from religion
+    where religion_id = #{religionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from religion
+    where religion_id = #{religionId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.ReligionExample" >
+    delete from religion
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Religion" >
+    insert into religion (religion_id, religion_name)
+    values (#{religionId,jdbcType=INTEGER}, #{religionName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Religion" >
+    insert into religion
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="religionId != null" >
+        religion_id,
+      </if>
+      <if test="religionName != null" >
+        religion_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="religionId != null" >
+        #{religionId,jdbcType=INTEGER},
+      </if>
+      <if test="religionName != null" >
+        #{religionName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.ReligionExample" resultType="java.lang.Integer" >
+    select count(*) from religion
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update religion
+    <set >
+      <if test="record.religionId != null" >
+        religion_id = #{record.religionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.religionName != null" >
+        religion_name = #{record.religionName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update religion
+    set religion_id = #{record.religionId,jdbcType=INTEGER},
+      religion_name = #{record.religionName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Religion" >
+    update religion
+    <set >
+      <if test="religionName != null" >
+        religion_name = #{religionName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where religion_id = #{religionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Religion" >
+    update religion
+    set religion_name = #{religionName,jdbcType=VARCHAR}
+    where religion_id = #{religionId,jdbcType=INTEGER}
+  </update>
+</mapper>

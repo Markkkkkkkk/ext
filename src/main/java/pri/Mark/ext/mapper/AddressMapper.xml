@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.AddressMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Address" >
+    <id column="address_id" property="addressId" jdbcType="INTEGER" />
+    <result column="address_dq" property="addressDq" jdbcType="INTEGER" />
+    <result column="address_native" property="addressNative" jdbcType="INTEGER" />
+    <result column="address_nowAddress" property="addressNowaddress" jdbcType="INTEGER" />
+    <result column="address_hj" property="addressHj" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="pri.Mark.ext.model.AddressWithBLOBs" extends="BaseResultMap" >
+    <result column="address_jtdz" property="addressJtdz" jdbcType="LONGVARCHAR" />
+    <result column="address_nowAddressDescription" property="addressNowaddressdescription" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    address_id, address_dq, address_native, address_nowAddress, address_hj
+  </sql>
+  <sql id="Blob_Column_List" >
+    address_jtdz, address_nowAddressDescription
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="pri.Mark.ext.model.AddressExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.AddressExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from address
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from address
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.AddressExample" >
+    delete from address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.AddressWithBLOBs" >
+    insert into address (address_id, address_dq, address_native, 
+      address_nowAddress, address_hj, address_jtdz, 
+      address_nowAddressDescription)
+    values (#{addressId,jdbcType=INTEGER}, #{addressDq,jdbcType=INTEGER}, #{addressNative,jdbcType=INTEGER}, 
+      #{addressNowaddress,jdbcType=INTEGER}, #{addressHj,jdbcType=INTEGER}, #{addressJtdz,jdbcType=LONGVARCHAR}, 
+      #{addressNowaddressdescription,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.AddressWithBLOBs" >
+    insert into address
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="addressId != null" >
+        address_id,
+      </if>
+      <if test="addressDq != null" >
+        address_dq,
+      </if>
+      <if test="addressNative != null" >
+        address_native,
+      </if>
+      <if test="addressNowaddress != null" >
+        address_nowAddress,
+      </if>
+      <if test="addressHj != null" >
+        address_hj,
+      </if>
+      <if test="addressJtdz != null" >
+        address_jtdz,
+      </if>
+      <if test="addressNowaddressdescription != null" >
+        address_nowAddressDescription,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="addressId != null" >
+        #{addressId,jdbcType=INTEGER},
+      </if>
+      <if test="addressDq != null" >
+        #{addressDq,jdbcType=INTEGER},
+      </if>
+      <if test="addressNative != null" >
+        #{addressNative,jdbcType=INTEGER},
+      </if>
+      <if test="addressNowaddress != null" >
+        #{addressNowaddress,jdbcType=INTEGER},
+      </if>
+      <if test="addressHj != null" >
+        #{addressHj,jdbcType=INTEGER},
+      </if>
+      <if test="addressJtdz != null" >
+        #{addressJtdz,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="addressNowaddressdescription != null" >
+        #{addressNowaddressdescription,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.AddressExample" resultType="java.lang.Integer" >
+    select count(*) from address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update address
+    <set >
+      <if test="record.addressId != null" >
+        address_id = #{record.addressId,jdbcType=INTEGER},
+      </if>
+      <if test="record.addressDq != null" >
+        address_dq = #{record.addressDq,jdbcType=INTEGER},
+      </if>
+      <if test="record.addressNative != null" >
+        address_native = #{record.addressNative,jdbcType=INTEGER},
+      </if>
+      <if test="record.addressNowaddress != null" >
+        address_nowAddress = #{record.addressNowaddress,jdbcType=INTEGER},
+      </if>
+      <if test="record.addressHj != null" >
+        address_hj = #{record.addressHj,jdbcType=INTEGER},
+      </if>
+      <if test="record.addressJtdz != null" >
+        address_jtdz = #{record.addressJtdz,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.addressNowaddressdescription != null" >
+        address_nowAddressDescription = #{record.addressNowaddressdescription,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update address
+    set address_id = #{record.addressId,jdbcType=INTEGER},
+      address_dq = #{record.addressDq,jdbcType=INTEGER},
+      address_native = #{record.addressNative,jdbcType=INTEGER},
+      address_nowAddress = #{record.addressNowaddress,jdbcType=INTEGER},
+      address_hj = #{record.addressHj,jdbcType=INTEGER},
+      address_jtdz = #{record.addressJtdz,jdbcType=LONGVARCHAR},
+      address_nowAddressDescription = #{record.addressNowaddressdescription,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update address
+    set address_id = #{record.addressId,jdbcType=INTEGER},
+      address_dq = #{record.addressDq,jdbcType=INTEGER},
+      address_native = #{record.addressNative,jdbcType=INTEGER},
+      address_nowAddress = #{record.addressNowaddress,jdbcType=INTEGER},
+      address_hj = #{record.addressHj,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.AddressWithBLOBs" >
+    update address
+    <set >
+      <if test="addressDq != null" >
+        address_dq = #{addressDq,jdbcType=INTEGER},
+      </if>
+      <if test="addressNative != null" >
+        address_native = #{addressNative,jdbcType=INTEGER},
+      </if>
+      <if test="addressNowaddress != null" >
+        address_nowAddress = #{addressNowaddress,jdbcType=INTEGER},
+      </if>
+      <if test="addressHj != null" >
+        address_hj = #{addressHj,jdbcType=INTEGER},
+      </if>
+      <if test="addressJtdz != null" >
+        address_jtdz = #{addressJtdz,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="addressNowaddressdescription != null" >
+        address_nowAddressDescription = #{addressNowaddressdescription,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pri.Mark.ext.model.AddressWithBLOBs" >
+    update address
+    set address_dq = #{addressDq,jdbcType=INTEGER},
+      address_native = #{addressNative,jdbcType=INTEGER},
+      address_nowAddress = #{addressNowaddress,jdbcType=INTEGER},
+      address_hj = #{addressHj,jdbcType=INTEGER},
+      address_jtdz = #{addressJtdz,jdbcType=LONGVARCHAR},
+      address_nowAddressDescription = #{addressNowaddressdescription,jdbcType=LONGVARCHAR}
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Address" >
+    update address
+    set address_dq = #{addressDq,jdbcType=INTEGER},
+      address_native = #{addressNative,jdbcType=INTEGER},
+      address_nowAddress = #{addressNowaddress,jdbcType=INTEGER},
+      address_hj = #{addressHj,jdbcType=INTEGER}
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.GkxxMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Gkxx" >
+    <id column="gkxx_id" property="gkxxId" jdbcType="INTEGER" />
+    <result column="gkxx_wyyz" property="gkxxWyyz" jdbcType="INTEGER" />
+    <result column="gkxx_tdcj" property="gkxxTdcj" jdbcType="DOUBLE" />
+    <result column="gkxx_tdzy" property="gkxxTdzy" jdbcType="CHAR" />
+    <result column="gkxx_kslb" property="gkxxKslb" jdbcType="INTEGER" />
+    <result column="gkxx_sjr" property="gkxxSjr" jdbcType="VARCHAR" />
+    <result column="gkxx_kl" property="gkxxKl" jdbcType="VARCHAR" />
+    <result column="gkxx_ksh" property="gkxxKsh" jdbcType="VARCHAR" />
+    <result column="gkxx_zxmc" property="gkxxZxmc" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    gkxx_id, gkxx_wyyz, gkxx_tdcj, gkxx_tdzy, gkxx_kslb, gkxx_sjr, gkxx_kl, gkxx_ksh, 
+    gkxx_zxmc
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.GkxxExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gkxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from gkxx
+    where gkxx_id = #{gkxxId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from gkxx
+    where gkxx_id = #{gkxxId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.GkxxExample" >
+    delete from gkxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Gkxx" >
+    insert into gkxx (gkxx_id, gkxx_wyyz, gkxx_tdcj, 
+      gkxx_tdzy, gkxx_kslb, gkxx_sjr, 
+      gkxx_kl, gkxx_ksh, gkxx_zxmc
+      )
+    values (#{gkxxId,jdbcType=INTEGER}, #{gkxxWyyz,jdbcType=INTEGER}, #{gkxxTdcj,jdbcType=DOUBLE}, 
+      #{gkxxTdzy,jdbcType=CHAR}, #{gkxxKslb,jdbcType=INTEGER}, #{gkxxSjr,jdbcType=VARCHAR}, 
+      #{gkxxKl,jdbcType=VARCHAR}, #{gkxxKsh,jdbcType=VARCHAR}, #{gkxxZxmc,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Gkxx" >
+    insert into gkxx
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gkxxId != null" >
+        gkxx_id,
+      </if>
+      <if test="gkxxWyyz != null" >
+        gkxx_wyyz,
+      </if>
+      <if test="gkxxTdcj != null" >
+        gkxx_tdcj,
+      </if>
+      <if test="gkxxTdzy != null" >
+        gkxx_tdzy,
+      </if>
+      <if test="gkxxKslb != null" >
+        gkxx_kslb,
+      </if>
+      <if test="gkxxSjr != null" >
+        gkxx_sjr,
+      </if>
+      <if test="gkxxKl != null" >
+        gkxx_kl,
+      </if>
+      <if test="gkxxKsh != null" >
+        gkxx_ksh,
+      </if>
+      <if test="gkxxZxmc != null" >
+        gkxx_zxmc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gkxxId != null" >
+        #{gkxxId,jdbcType=INTEGER},
+      </if>
+      <if test="gkxxWyyz != null" >
+        #{gkxxWyyz,jdbcType=INTEGER},
+      </if>
+      <if test="gkxxTdcj != null" >
+        #{gkxxTdcj,jdbcType=DOUBLE},
+      </if>
+      <if test="gkxxTdzy != null" >
+        #{gkxxTdzy,jdbcType=CHAR},
+      </if>
+      <if test="gkxxKslb != null" >
+        #{gkxxKslb,jdbcType=INTEGER},
+      </if>
+      <if test="gkxxSjr != null" >
+        #{gkxxSjr,jdbcType=VARCHAR},
+      </if>
+      <if test="gkxxKl != null" >
+        #{gkxxKl,jdbcType=VARCHAR},
+      </if>
+      <if test="gkxxKsh != null" >
+        #{gkxxKsh,jdbcType=VARCHAR},
+      </if>
+      <if test="gkxxZxmc != null" >
+        #{gkxxZxmc,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.GkxxExample" resultType="java.lang.Integer" >
+    select count(*) from gkxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update gkxx
+    <set >
+      <if test="record.gkxxId != null" >
+        gkxx_id = #{record.gkxxId,jdbcType=INTEGER},
+      </if>
+      <if test="record.gkxxWyyz != null" >
+        gkxx_wyyz = #{record.gkxxWyyz,jdbcType=INTEGER},
+      </if>
+      <if test="record.gkxxTdcj != null" >
+        gkxx_tdcj = #{record.gkxxTdcj,jdbcType=DOUBLE},
+      </if>
+      <if test="record.gkxxTdzy != null" >
+        gkxx_tdzy = #{record.gkxxTdzy,jdbcType=CHAR},
+      </if>
+      <if test="record.gkxxKslb != null" >
+        gkxx_kslb = #{record.gkxxKslb,jdbcType=INTEGER},
+      </if>
+      <if test="record.gkxxSjr != null" >
+        gkxx_sjr = #{record.gkxxSjr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gkxxKl != null" >
+        gkxx_kl = #{record.gkxxKl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gkxxKsh != null" >
+        gkxx_ksh = #{record.gkxxKsh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gkxxZxmc != null" >
+        gkxx_zxmc = #{record.gkxxZxmc,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update gkxx
+    set gkxx_id = #{record.gkxxId,jdbcType=INTEGER},
+      gkxx_wyyz = #{record.gkxxWyyz,jdbcType=INTEGER},
+      gkxx_tdcj = #{record.gkxxTdcj,jdbcType=DOUBLE},
+      gkxx_tdzy = #{record.gkxxTdzy,jdbcType=CHAR},
+      gkxx_kslb = #{record.gkxxKslb,jdbcType=INTEGER},
+      gkxx_sjr = #{record.gkxxSjr,jdbcType=VARCHAR},
+      gkxx_kl = #{record.gkxxKl,jdbcType=VARCHAR},
+      gkxx_ksh = #{record.gkxxKsh,jdbcType=VARCHAR},
+      gkxx_zxmc = #{record.gkxxZxmc,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Gkxx" >
+    update gkxx
+    <set >
+      <if test="gkxxWyyz != null" >
+        gkxx_wyyz = #{gkxxWyyz,jdbcType=INTEGER},
+      </if>
+      <if test="gkxxTdcj != null" >
+        gkxx_tdcj = #{gkxxTdcj,jdbcType=DOUBLE},
+      </if>
+      <if test="gkxxTdzy != null" >
+        gkxx_tdzy = #{gkxxTdzy,jdbcType=CHAR},
+      </if>
+      <if test="gkxxKslb != null" >
+        gkxx_kslb = #{gkxxKslb,jdbcType=INTEGER},
+      </if>
+      <if test="gkxxSjr != null" >
+        gkxx_sjr = #{gkxxSjr,jdbcType=VARCHAR},
+      </if>
+      <if test="gkxxKl != null" >
+        gkxx_kl = #{gkxxKl,jdbcType=VARCHAR},
+      </if>
+      <if test="gkxxKsh != null" >
+        gkxx_ksh = #{gkxxKsh,jdbcType=VARCHAR},
+      </if>
+      <if test="gkxxZxmc != null" >
+        gkxx_zxmc = #{gkxxZxmc,jdbcType=INTEGER},
+      </if>
+    </set>
+    where gkxx_id = #{gkxxId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Gkxx" >
+    update gkxx
+    set gkxx_wyyz = #{gkxxWyyz,jdbcType=INTEGER},
+      gkxx_tdcj = #{gkxxTdcj,jdbcType=DOUBLE},
+      gkxx_tdzy = #{gkxxTdzy,jdbcType=CHAR},
+      gkxx_kslb = #{gkxxKslb,jdbcType=INTEGER},
+      gkxx_sjr = #{gkxxSjr,jdbcType=VARCHAR},
+      gkxx_kl = #{gkxxKl,jdbcType=VARCHAR},
+      gkxx_ksh = #{gkxxKsh,jdbcType=VARCHAR},
+      gkxx_zxmc = #{gkxxZxmc,jdbcType=INTEGER}
+    where gkxx_id = #{gkxxId,jdbcType=INTEGER}
+  </update>
+</mapper>

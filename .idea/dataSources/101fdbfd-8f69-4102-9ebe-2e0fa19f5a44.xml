@@ -1,0 +1,1945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - extdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="extdb">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="sy"/>
+    <schema id="5" name="web-ssm"/>
+    <table id="6" parent="1" name="address">
+      <comment>å&#x9c;°å&#x9d;&#x80;è¡¨ï¼&#x9a;è¢«å­¦ç&#x94;&#x9f;ç&#x9a;&#x84;å&#x90;&#x84;ç§&#x8d;å&#x9c;°å&#x9d;&#x80;æ&#x90;&#x9e;ç&#x9a;&#x84;å¾&#x88;ç&#x83;¦ï¼&#x8c;ç&#x8e;°å&#x9c;¨ä¸&#x93;é&#x97;¨å¼&#x84;ä¸&#x80;ä¸ªè¡¨æ&#x9d;¥è®°å½&#x95;å­¦ç&#x94;&#x9f;ç&#x9a;&#x84;å&#x90;&#x84;ç§&#x8d;å&#x9c;°å&#x9d;&#x80;</comment>
+    </table>
+    <table id="7" parent="1" name="apartment"/>
+    <table id="8" parent="1" name="bloodtype"/>
+    <table id="9" parent="1" name="city">
+      <comment>å&#x9f;&#x8e;å¸&#x82;è¡¨</comment>
+    </table>
+    <table id="10" parent="1" name="class">
+      <comment>ç&#x8f;­çº§</comment>
+    </table>
+    <table id="11" parent="1" name="country">
+      <comment>å&#x9b;½å®¶è¡¨</comment>
+    </table>
+    <table id="12" parent="1" name="dbdescription">
+      <comment>æ&#x95;°æ&#x8d;®åº&#x93;æ¯&#x8f;å¼ è¡¨ï¼&#x8c;æ¯&#x8f;ä¸ªå­&#x97;æ®µç&#x9a;&#x84;è§£è¯&#x91;</comment>
+    </table>
+    <table id="13" parent="1" name="description">
+      <comment>å½&#x93;ç&#x94;¨æ&#x88;·æ¯&#x8f;ä¸&#x80;æ¬¡ä¿®æ&#x94;¹ï¼&#x88;å&#x88; é&#x99;¤ï¼&#x8c;æ&#x94;¹å&#x8a;¨å&#x87; ä¸ªå­&#x97;ï¼&#x8c;å¢&#x9e;å&#x8a; ä¸&#x80;äº&#x9b;å&#x86;&#x85;å®¹ï¼&#x89;é&#x83;½è§&#x86;ä¸ºæ&#x8f;&#x8f;è¿°ç&#x9a;&#x84;é&#x87;&#x8d;æ&#x96;°æ&#x8f;&#x90;äº¤</comment>
+    </table>
+    <table id="14" parent="1" name="dormitory">
+      <comment>å­¦ç&#x94;&#x9f;å®¿è&#x88;&#x8d;è¡¨ï¼&#x9a;eg:è¥¿å&#x8c;ºäº&#x8c;å&#x8f;·ç&#x94;·ç&#x94;&#x9f;å&#x85;¬å¯&#x93;B106ï¼&#x8c;è¿&#x99;é&#x87;&#x8c;è¥¿å&#x8c;ºæ&#x98;¯æ ¡å&#x8c;ºï¼&#x8c;äº&#x8c;å&#x8f;·ç&#x94;·ç&#x94;&#x9f;å&#x85;¬å¯&#x93;æ&#x98;¯æ¥¼å&#x90;&#x8d;ï¼&#x8c;B106æ&#x89;&#x8d;æ&#x98;¯å­¦ç&#x94;&#x9f;å®¿è&#x88;&#x8d;å&#x90;&#x8d;</comment>
+    </table>
+    <table id="15" parent="1" name="gkxx">
+      <comment>é«&#x98;è&#x80;&#x83;ä¿¡æ&#x81;¯ï¼&#x8c;è¿&#x99;äº&#x9b;ä¿¡æ&#x81;¯å&#x8f;ªæ&#x9c;&#x89;é«&#x98;è&#x80;&#x83;ç&#x9a;&#x84;æ&#x97;¶å&#x80;&#x99;æ&#x89;&#x8d;ç&#x94;¨å&#x88;°ç&#x9a;&#x84;ä¿¡æ&#x81;¯ï¼&#x8c;å&#x8f;ªæ&#x98;¯ä½&#x9c;è&#x80;&#x85;è&#x87;ªå·±æ&#x8a;&#x8a;ä»&#x96;å&#x88;&#x86;äº&#x86;ä¸&#x8b;ç±»ï¼&#x8c;å¼&#x84;æ&#x88;&#x90;äº&#x86;ä¸&#x80;ä¸ªè¡¨</comment>
+    </table>
+    <table id="16" parent="1" name="healthstatus">
+      <comment>å&#x81;¥åº·ç&#x8a;¶æ&#x80;&#x81;è¡¨</comment>
+    </table>
+    <table id="17" parent="1" name="highschool">
+      <comment>é«&#x98;ä¸­</comment>
+    </table>
+    <table id="18" parent="1" name="hj">
+      <comment>å½&#x93;æ&#x88;·ç±&#x8d;æ&#x94;¹å&#x8f;&#x98;ä½&#x86;æ&#x98;¯æ&#x88;·å&#x8f;£æ&#x80;§è´¨ä¸&#x8d;å&#x8f;&#x98;æ&#x97;¶å&#x8f;ªé&#x9c;&#x80;è¦&#x81;é&#x87;&#x8d;æ&#x96;°å¡«å&#x86;&#x99;ä¸&#x80;æ¬¡æ&#x88;·ç±&#x8d;å&#x92;&#x8c;æ&#x88;·å&#x8f;£æ&#x80;§è´¨</comment>
+    </table>
+    <table id="19" parent="1" name="idcard"/>
+    <table id="20" parent="1" name="identity">
+      <comment>èº«ä»½è¯&#x81;ä»¶</comment>
+    </table>
+    <table id="21" parent="1" name="identitytype"/>
+    <table id="22" parent="1" name="kslb">
+      <comment>è&#x80;&#x83;ç&#x94;&#x9f;ç±»å&#x88;«ï¼&#x9a;å&#x9f;&#x8e;é&#x95;&#x87;åº&#x94;å±&#x8a;ï¼&#x8c;å&#x9f;&#x8e;é&#x95;&#x87;å¾&#x80;å±&#x8a;ï¼&#x8c;å&#x86;&#x9c;æ&#x9d;&#x91;åº&#x94;å±&#x8a;ï¼&#x8c;å&#x86;&#x9c;æ&#x9d;&#x91;å¾&#x80;å±&#x8a;</comment>
+    </table>
+    <table id="23" parent="1" name="loan">
+      <comment>è´·æ¬¾è¡¨</comment>
+    </table>
+    <table id="24" parent="1" name="loantype"/>
+    <table id="25" parent="1" name="log">
+      <comment>æ&#x97;¥å¿&#x97;è¡¨åº&#x94;è¯¥è®°å½&#x95;ï¼&#x8c;ç&#x94;¨æ&#x88;·ç&#x99;»é&#x99;&#x86;æ&#x97;¶é&#x97;´ï¼&#x8c;ï¼&#x8c;é&#x80;&#x80;å&#x87;ºæ&#x97;¶é&#x97;´ï¼&#x8c;ç&#x99;»é&#x99;&#x86;IPï¼&#x8c;(æ&#x93;&#x8d;ä½&#x9c;ç±»å&#x9e;&#x8b;ï¼&#x9a;å¢&#x9e;ï¼&#x8c;å&#x88; ï¼&#x8c;æ&#x94;¹ï¼&#x8c;æ&#x9f;¥ï¼&#x8c;ä¸&#x8b;è½½ï¼&#x88;ä¹&#x9f;å°±æ&#x98;¯æ&#x89;&#x80;è°&#x93;ç&#x9a;&#x84;å¯¼å&#x87;ºï¼&#x89;)äº&#x86;å&#x93;ªä¸ªè¡¨é&#x87;&#x8c;é&#x9d;¢ç&#x9a;&#x84;å&#x93;ªä¸ªå­&#x97;æ®µï¼&#x8c;æ&#x9b;´æ&#x96;°å&#x89;&#x8d;ç&#x9a;&#x84;å&#x80;¼ï¼&#x8c;æ&#x9b;´æ&#x96;°å&#x90;&#x8e;ç&#x9a;&#x84;å&#x80;¼ï¼&#x8c;è°&#x81;æ&#x9b;´æ&#x96;°ç&#x9a;&#x84;ï¼&#x88;ç&#x94;¨æ&#x88;·IDï¼&#x8c;ç&#x94;¨æ&#x88;·è§&#x92;è&#x89;²ï¼&#x89;ï¼&#x8c;ï¼&#x88;ä»&#x8e;ç&#x99;¾åº¦ç&#x9f;¥é&#x81;&#x93;ä¸&#x8a;ç&#x9c;&#x8b;ç&#x9a;&#x84;ï¼&#x8c;ä¹&#x9f;ä¸&#x8d;ç&#x9f;¥é&#x81;&#x93;è¯¥ä¸&#x8d;è¯¥é&#x87;&#x87;ç&#x94;¨è¿&#x99;å&#x8f;¥è¯&#x9d;ï¼&#x9a;æ&#x89;&#x80;æ&#x9c;&#x89;ç&#x9a;&#x84;å¢&#x9e;å&#x88; æ&#x94;¹ç&#x94;¨å­&#x98;å&#x82;¨è¿&#x87;ç¨&#x8b;å¤&#x84;ç&#x90;&#x86;ï¼&#x8c;è¦&#x81;ä¹&#x88;æ&#x89;&#x80;æ&#x9c;&#x89;ç&#x9a;&#x84;è¡¨å¢&#x9e;å&#x88; æ&#x94;¹å&#x86;&#x99;è§¦å&#x8f;&#x91;å&#x99;¨ï¼&#x89;</comment>
+    </table>
+    <table id="26" parent="1" name="major">
+      <comment>ä¸&#x93;ä¸&#x9a;</comment>
+    </table>
+    <table id="27" parent="1" name="nation">
+      <comment>æ°&#x91;æ&#x97;&#x8f;è¡¨</comment>
+    </table>
+    <table id="28" parent="1" name="picture">
+      <comment>è¿&#x99;ä¸ªå&#x9b;¾ç&#x89;&#x87;è¡¨ï¼&#x8c;é&#x99;¤äº&#x86;ä¿&#x9d;å­&#x98;å­¦ç&#x94;&#x9f;è¯&#x81;ä¸&#x8a;é&#x9d;¢ç&#x9a;&#x84;å&#x9b;¾ç&#x89;&#x87;ï¼&#x8c;è¿&#x98;åº&#x94;è¯¥ä¿&#x9d;å­&#x98;ä¸&#x80;ä¸ªç&#x94;¨æ&#x88;·å¤´å&#x83;&#x8f;ï¼&#x8c;å°±æ&#x98;¯å&#x9c;¨æ&#x9c;&#x8b;å&#x8f;&#x8b;å&#x9c;&#x88;é&#x87;&#x8c;é&#x9d;¢è&#x87;ªå®&#x9a;ä¹&#x89;ä¸&#x8a;ä¼ ç&#x9a;&#x84;å¤´å&#x83;&#x8f;
+è¿&#x99;é&#x87;&#x8c;é&#x9d;¢ä¿&#x9d;å­&#x98;ç&#x9a;&#x84;é&#x83;½æ&#x98;¯å&#x85;³äº&#x8e;å­¦ç&#x94;&#x9f;ç&#x9a;&#x84;ä¸&#x80;äº&#x9b;é&#x87;&#x8d;è¦&#x81;ç&#x9a;&#x84;å&#x9b;¾ç&#x89;&#x87;ï¼&#x8c;æ¯&#x94;å¦&#x82;è¯´å­¦ç&#x94;&#x9f;è¯&#x81;ä¸&#x8a;ç&#x9a;&#x84;å&#x9b;¾ç&#x89;&#x87;ï¼&#x8c;è¿&#x98;æ&#x9c;&#x89;ä¸&#x80;å¯¸ç&#x85;§ç&#x89;&#x87;ä»&#x80;ä¹&#x88;ç&#x9a;&#x84;ã&#x80;&#x82;è¿&#x99;é&#x87;&#x8c;å&#x86;&#x99;ç&#x9a;&#x84;æ&#x97;¶å&#x80;&#x99;é&#x82;£ä¸ªå&#x90;&#x8d;å­&#x97;å&#x8f;¯ä»¥è®¾ä¸º0ä»£è¡¨ä¸&#x80;å¯¸ç&#x85;§ï¼&#x8c;1ä»£è¡¨å¤´å&#x83;&#x8f;ï¼&#x8c;ï¼&#x8c;ç­&#x89;ç­&#x89;ä»¥æ­¤ç±»æ&#x8e;¨ã&#x80;&#x82;ã&#x80;&#x82;ã&#x80;&#x82;</comment>
+    </table>
+    <table id="29" parent="1" name="province">
+      <comment>ç&#x9c;&#x81;ä»½è¡¨</comment>
+    </table>
+    <table id="30" parent="1" name="relative">
+      <comment>äº²æ&#x88;&#x9a;è¡¨</comment>
+    </table>
+    <table id="31" parent="1" name="religion">
+      <comment>å®&#x97;æ&#x95;&#x99;ä¿¡ä»°</comment>
+    </table>
+    <table id="32" parent="1" name="role">
+      <comment>è§&#x92;è&#x89;²</comment>
+    </table>
+    <table id="33" parent="1" name="shuoshuo"/>
+    <table id="34" parent="1" name="shuoshuocomment"/>
+    <table id="35" parent="1" name="shuoshuolike"/>
+    <table id="36" parent="1" name="shuoshuopicture">
+      <comment>é&#x89;´äº&#x8e;è¯´è¯´å·²ç»&#x8f;æ&#x9c;&#x89;äº&#x86;å&#x8f;&#x91;å¸&#x83;æ&#x97;¶é&#x97;´å&#x92;&#x8c;å&#x88; é&#x99;¤æ&#x97;¶é&#x97;´ï¼&#x8c;æ&#x95;&#x85;è¯´è¯´å&#x9b;¾ç&#x89;&#x87;å°±ä¸&#x8d;é&#x9c;&#x80;è¦&#x81;äº&#x86;ã&#x80;&#x82;</comment>
+    </table>
+    <table id="37" parent="1" name="student">
+      <comment>å­¦ç&#x94;&#x9f;è¡¨
+Description:
+1ï¼&#x8c;æ&#x9c;&#x89;student_classå&#x92;&#x8c;student_lqzyå­&#x97;æ®µï¼&#x8c;æ ¹æ&#x8d;®student_classå­&#x97;æ®µå&#x8f;¯ä»¥æ&#x9f;¥å&#x87;ºç&#x8f;­çº§æ&#x89;&#x80;å±&#x9e;ä¸&#x93;ä¸&#x9a;ï¼&#x8c;é&#x82;£ä¸ºä»&#x80;ä¹&#x88;è¿&#x98;è¦&#x81;å¤&#x9a;æ·»å&#x8a; ä¸&#x80;ä¸ªstudent_lqzyå­&#x97;æ®µå&#x91;¢ï¼&#x9f;æ&#x98;¯ä¸ºäº&#x86;é&#x98;²æ­¢å­¦ç&#x94;&#x9f;è¢«å&#x93;ªä¸ªä¸&#x93;ä¸&#x9a;å½&#x95;å&#x8f;&#x96;äº&#x86;ä½&#x86;æ&#x98;¯å&#x8d;´ä¸&#x8a;ç&#x9a;&#x84;å&#x85;¶ä»&#x96;ä¸&#x93;ä¸&#x9a;ç&#x9a;&#x84;æ&#x83;&#x85;å&#x86;µã&#x80;&#x82;egï¼&#x9b;ä½&#x9c;è&#x80;&#x85;æ&#x9c;¬æ&#x9d;¥ä¸&#x93;ä¸&#x9a;æ&#x98;¯é&#x87;&#x91;è&#x9e;&#x8d;ä¿¡æ&#x81;¯å&#x8c;&#x96;ä¸&#x93;ä¸&#x9a;ï¼&#x8c;ä½&#x86;æ&#x98;¯è¿&#x9b;äº&#x86;å&#x8d;&#x93;è¶&#x8a;ç&#x8f;­æ&#x98;¯è½¯ä»¶å·¥ç¨&#x8b;ä¸&#x93;ä¸&#x9a;ã&#x80;&#x82;
+2ï¼&#x8c;</comment>
+    </table>
+    <table id="38" parent="1" name="studentdiadic">
+      <comment>å­¦ç&#x94;&#x9f;å&#x8f;&#x8c;å&#x80;¼è¡¨ï¼&#x8c;å&#x9b; ä¸ºå­¦ç&#x94;&#x9f;æ&#x9c;&#x89;äº&#x9b;å­&#x97;æ®µå&#x8f;ªæ&#x9c;&#x89;æ&#x98;¯æ&#x88;&#x96;å&#x90;¦ä¸¤ç§&#x8d;æ&#x83;&#x85;å&#x86;µï¼&#x8c;æ&#x89;&#x80;ä»¥æ&#x8a;&#x8a;è¿&#x99;äº&#x9b;å­&#x97;æ®µé&#x83;½ç»&#x9f;ä¸&#x80;å&#x88;°ä¸&#x80;å¼ è¡¨é&#x87;&#x8c;é&#x9d;¢ï¼&#x8c;ä¸&#x8d;æ&#x8a;&#x8a;ç&#x94;·æ&#x88;&#x96;å¥³æ·»å&#x8a; è¿&#x9b;æ&#x9d;¥ï¼&#x8c;æ&#x98;¯å&#x9b; ä¸ºè¦&#x81;ç»&#x8f;å¸¸ç&#x94;¨å&#x88;°æ&#x80;§å&#x88;«å­&#x97;æ®µæ&#x89;&#x80;ä»¥æ&#x94;¾å&#x9c;¨å­¦ç&#x94;&#x9f;è¡¨é&#x87;&#x8c;é&#x9d;¢</comment>
+    </table>
+    <table id="39" parent="1" name="studentname">
+      <comment>å­¦ç&#x94;&#x9f;å&#x90;&#x8d;å­&#x97;è¡¨ï¼&#x9a;	ï¼&#x8c;å&#x93;ªä¸ªæ&#x98;¯æ&#x9c;&#x80;æ&#x96;°ç&#x9a;&#x84;å&#x90;&#x8d;å­&#x97;</comment>
+    </table>
+    <table id="40" parent="1" name="studenttime">
+      <comment>å­¦ç&#x94;&#x9f;æ&#x97;¶é&#x97;´è¡¨ï¼&#x9a;å&#x85;³äº&#x8e;å­¦ç&#x94;&#x9f;ç&#x9a;&#x84;æ&#x97;¶é&#x97;´å­&#x97;æ®µæ&#x9c;&#x89;ç&#x82;¹å¤&#x9a;ï¼&#x8c;æ&#x95;&#x85;å&#x8f;¦å»ºä¸ªè¡¨,å&#x9b; ä¸ºè¦&#x81;è¿&#x9b;è¡&#x8c;é¢&#x84;æ&#x8a;¥é&#x81;&#x93;ï¼&#x8c;å&#x88;&#x99;æ­¤è¡¨ç&#x9a;&#x84;studentTime_expectRegisterå­&#x97;æ®µä¸ºå&#x88;¤æ&#x96;­è¯¥å­¦ç&#x94;&#x9f;æ&#x98;¯å&#x90;¦è¦&#x81;æ&#x9d;¥ç&#x9a;&#x84;æ&#x84;&#x8f;æ&#x80;&#x9d;ï¼&#x8c;å¦&#x82;æ&#x9e;&#x9c;ä»&#x96;å¡«å&#x86;&#x99;äº&#x86;é¢&#x84;è®¡å&#x88;°è¾¾æ&#x97;¶é&#x97;´ï¼&#x8c;å&#x88;&#x99;ä¸ºä»&#x96;æ&#x83;³ä¸&#x8a;è¿&#x99;ä¸ªå­¦æ ¡</comment>
+    </table>
+    <table id="41" parent="1" name="tabdescription"/>
+    <table id="42" parent="1" name="town">
+      <comment>å&#x9f;&#x8e;é&#x95;&#x87;è¡¨</comment>
+    </table>
+    <table id="43" parent="1" name="user"/>
+    <table id="44" parent="1" name="wyyz">
+      <comment>å­¦ç&#x94;&#x9f;é«&#x98;è&#x80;&#x83;æ&#x97;¶æ&#x89;&#x80;é&#x80;&#x89;ç&#x9a;&#x84;å¤&#x96;è¯­è¯­ç§&#x8d;</comment>
+    </table>
+    <table id="45" parent="1" name="xf">
+      <comment>å­¦è´¹è¡¨</comment>
+    </table>
+    <table id="46" parent="1" name="xq">
+      <comment>æ ¡å&#x8c;ºï¼&#x8c;eg:å&#x8c;&#x97;æ ¡å&#x8c;ºï¼&#x8c;å&#x8d;&#x97;æ ¡å&#x8c;ºï¼&#x8c;è¥¿æ ¡å&#x8c;ºä¹&#x8b;ç±»</comment>
+    </table>
+    <table id="47" parent="1" name="yx">
+      <comment>é&#x99;¢ç³»è¡¨ï¼&#x9a;egï¼&#x9a;è½¯ä»¶å­¦é&#x99;¢ï¼&#x8c;ç»&#x8f;è´¸ç®¡ç&#x90;&#x86;å­¦é&#x99;¢ç­&#x89;</comment>
+    </table>
+    <table id="48" parent="1" name="zzmm">
+      <comment>æ&#x94;¿æ²»é&#x9d;¢è²&#x8c;</comment>
+    </table>
+    <column id="49" parent="6" name="address_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="50" parent="6" name="address_dq">
+      <comment>å&#x9c;°å&#x8c;º</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="51" parent="6" name="address_jtdz">
+      <comment>äº¤é&#x80;&#x9a;å&#x9c;°å&#x9d;&#x80;ï¼&#x8c;å°±æ&#x98;¯å­¦ç&#x94;&#x9f;é«&#x98;è&#x80;&#x83;å&#x89;&#x8d;å¡«å&#x86;&#x99;ç&#x9a;&#x84;é&#x80;&#x9a;ç&#x9f;¥ä¹¦å¿«é&#x80;&#x92;å&#x9c;°å&#x9d;&#x80;</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="52" parent="6" name="address_native">
+      <comment>ç±&#x8d;è´¯</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="53" parent="6" name="address_nowAddress">
+      <comment>ç&#x8e;°ä½&#x8f;å&#x9d;&#x80;ï¼&#x8c;å&#x8f;ªå&#x85;·ä½&#x93;å&#x88;°å&#x9f;&#x8e;å¸&#x82;ç­&#x89;çº§ä¸&#x8b;è¾¹ç&#x9a;&#x84;å&#x8e;¿ï¼&#x8c;å&#x8c;ºï¼&#x8c;å¸&#x82;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="54" parent="6" name="address_nowAddressDescription">
+      <comment>å&#x9b; ä¸ºaddress_nowAddresså­&#x97;æ®µå&#x8f;ªå&#x85;·ä½&#x93;å&#x88;°å&#x9f;&#x8e;å¸&#x82;ç­&#x89;çº§ä¸&#x8b;è¾¹ç&#x9a;&#x84;å&#x8e;¿ï¼&#x8c;å&#x8c;ºï¼&#x8c;å¸&#x82;ï¼&#x8c;æ&#x89;&#x80;ä»¥ä¹&#x8b;å&#x90;&#x8e;ç&#x9a;&#x84;ä¹¡é&#x95;&#x87;ï¼&#x8c;è¡&#x97;é&#x81;&#x93;ç­&#x89;ç&#x89;¹å&#x88;«å&#x85;·ä½&#x93;ç&#x9a;&#x84;ä¿¡æ&#x81;¯ï¼&#x8c;ç&#x94;±è¿&#x99;ä¸ªå­&#x97;æ®µä¿&#x9d;å­&#x98;</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="55" parent="6" name="address_hj">
+      <comment>æ&#x88;·ç±&#x8d;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="56" parent="6" name="address_dq_idx">
+      <columns>address_dq</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="57" parent="6" name="address_hj_idx">
+      <columns>address_hj</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="58" parent="6" name="address_id_UNIQUE">
+      <columns>address_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="59" parent="6" name="address_native_idx">
+      <columns>address_native</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="60" parent="6" name="address_nowAddress_idx">
+      <columns>address_nowAddress</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="61" parent="6" name="PRIMARY">
+      <columns>address_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="62" parent="6" name="address_id_UNIQUE">
+      <columns>address_id</columns>
+      <underlying-index>address_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="63" parent="6" name="address_dq">
+      <columns>address_dq</columns>
+      <ref-key>~.town.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="64" parent="6" name="address_native">
+      <columns>address_native</columns>
+      <ref-key>~.province.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="65" parent="6" name="address_nowAddress">
+      <columns>address_nowAddress</columns>
+      <ref-key>~.town.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="66" parent="6" name="address_hj">
+      <columns>address_hj</columns>
+      <ref-key>~.hj.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="67" parent="7" name="apartment_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="68" parent="7" name="apartment_yx">
+      <comment>å&#x85;¬å¯&#x93;æ&#x89;&#x80;å±&#x9e;é&#x99;¢ç³»ï¼&#x8c;æ ¹æ&#x8d;®é&#x99;¢ç³»è&#x83;½æ&#x9f;¥å&#x87;ºå&#x85;¬å¯&#x93;æ&#x89;&#x80;å±&#x9e;æ ¡å&#x8c;º</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="69" parent="7" name="apartment_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="70" parent="7" name="apartment-yx_idx">
+      <columns>apartment_yx</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="71" parent="7" name="apartment_id_UNIQUE">
+      <columns>apartment_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="72" parent="7" name="PRIMARY">
+      <columns>apartment_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="73" parent="7" name="apartment_id_UNIQUE">
+      <columns>apartment_id</columns>
+      <underlying-index>apartment_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="74" parent="7" name="apartment-yx">
+      <columns>apartment_yx</columns>
+      <ref-key>~.yx.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="75" parent="8" name="bloodType_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="76" parent="8" name="bloodType_type">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="77" parent="8" name="bloodType_id_UNIQUE">
+      <columns>bloodType_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="78" parent="8" name="PRIMARY">
+      <columns>bloodType_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="79" parent="8" name="bloodType_id_UNIQUE">
+      <columns>bloodType_id</columns>
+      <underlying-index>bloodType_id_UNIQUE</underlying-index>
+    </key>
+    <column id="80" parent="9" name="city_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="81" parent="9" name="city_province">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="82" parent="9" name="city_encoding">
+      <comment>å&#x9f;&#x8e;å¸&#x82;ç¼&#x96;ç &#x81;</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="83" parent="9" name="city_encoding_UNIQUE">
+      <columns>city_encoding</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="84" parent="9" name="PRIMARY">
+      <columns>city_encoding</columns>
+      <primary>1</primary>
+    </key>
+    <key id="85" parent="9" name="city_encoding_UNIQUE">
+      <columns>city_encoding</columns>
+      <underlying-index>city_encoding_UNIQUE</underlying-index>
+    </key>
+    <column id="86" parent="10" name="class_name">
+      <comment>ç&#x8f;­çº§å&#x90;&#x8d;ç§°</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="87" parent="10" name="class_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="88" parent="10" name="class_major">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="89" parent="10" name="class_id_UNIQUE">
+      <columns>class_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="90" parent="10" name="class_major_idx">
+      <columns>class_major</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="91" parent="10" name="PRIMARY">
+      <columns>class_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="92" parent="10" name="class_id_UNIQUE">
+      <columns>class_id</columns>
+      <underlying-index>class_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="93" parent="10" name="class_major">
+      <columns>class_major</columns>
+      <ref-key>~.major.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="94" parent="11" name="country_name">
+      <comment>å&#x9b;½å®¶å&#x90;&#x8d;å­&#x97;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="95" parent="11" name="country_encoding">
+      <comment>å&#x9b;½å®¶ç¼&#x96;ç &#x81;</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="96" parent="11" name="country_encoding_UNIQUE">
+      <columns>country_encoding</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="97" parent="11" name="PRIMARY">
+      <columns>country_encoding</columns>
+      <primary>1</primary>
+    </key>
+    <key id="98" parent="11" name="country_encoding_UNIQUE">
+      <columns>country_encoding</columns>
+      <underlying-index>country_encoding_UNIQUE</underlying-index>
+    </key>
+    <column id="99" parent="12" name="DBdescription_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="100" parent="12" name="DBdescription_zd">
+      <comment>è¡¨é&#x87;&#x8c;é&#x9d;¢ç&#x9a;&#x84;å&#x93;ªä¸ªå­&#x97;æ®µ</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="101" parent="12" name="DBdescription_description">
+      <comment>è¡¨æ&#x8f;&#x8f;è¿°</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="102" parent="12" name="DBdescription_tableName">
+      <comment>é&#x82;£ä¸ªæ&#x95;°æ&#x8d;®è¡¨ç&#x9a;&#x84;å&#x90;&#x8d;å­&#x97;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="103" parent="12" name="DBdescription_TABdescription_idx">
+      <columns>DBdescription_zd</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="104" parent="12" name="DBdescription_UNIQUE">
+      <columns>DBdescription_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="105" parent="12" name="PRIMARY">
+      <columns>DBdescription_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="106" parent="12" name="DBdescription_UNIQUE">
+      <columns>DBdescription_id</columns>
+      <underlying-index>DBdescription_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="107" parent="12" name="DBdescription_TABdescription">
+      <columns>DBdescription_zd</columns>
+      <ref-key>~.tabdescription.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="108" parent="13" name="description_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="109" parent="13" name="description_text">
+      <comment>æ&#x8f;&#x8f;è¿°å&#x86;&#x85;å®¹</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="110" parent="13" name="description_inputTime">
+      <comment>æ&#x8f;&#x8f;è¿°æ&#x8f;&#x92;å&#x85;¥æ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="111" parent="13" name="personalDescription_id_UNIQUE">
+      <columns>description_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="112" parent="13" name="PRIMARY">
+      <columns>description_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="113" parent="13" name="personalDescription_id_UNIQUE">
+      <columns>description_id</columns>
+      <underlying-index>personalDescription_id_UNIQUE</underlying-index>
+    </key>
+    <column id="114" parent="14" name="dormitroy_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="115" parent="14" name="dormitory_name">
+      <comment>å®¿è&#x88;&#x8d;å&#x90;&#x8d;ï¼&#x9a;eg:è¥¿å&#x8c;ºäº&#x8c;å&#x8f;·ç&#x94;·ç&#x94;&#x9f;å&#x85;¬å¯&#x93;B106ï¼&#x8c;è¿&#x99;é&#x87;&#x8c;è¥¿å&#x8c;ºæ&#x98;¯æ ¡å&#x8c;ºï¼&#x8c;äº&#x8c;å&#x8f;·ç&#x94;·ç&#x94;&#x9f;å&#x85;¬å¯&#x93;æ&#x98;¯æ¥¼å&#x90;&#x8d;ï¼&#x8c;B106æ&#x89;&#x8d;æ&#x98;¯å¯&#x9d;å®¤å&#x90;&#x8d;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="116" parent="14" name="dormitory_apartment">
+      <comment>å®¿è&#x88;&#x8d;æ&#x89;&#x80;å±&#x9e;å&#x85;¬å¯&#x93;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="117" parent="14" name="dormitory_apartment_idx">
+      <columns>dormitory_apartment</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="118" parent="14" name="dormitroy_id_UNIQUE">
+      <columns>dormitroy_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="119" parent="14" name="PRIMARY">
+      <columns>dormitroy_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="120" parent="14" name="dormitroy_id_UNIQUE">
+      <columns>dormitroy_id</columns>
+      <underlying-index>dormitroy_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="121" parent="14" name="dormitory_apartment">
+      <columns>dormitory_apartment</columns>
+      <ref-key>~.apartment.apartment_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="122" parent="15" name="gkxx_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="123" parent="15" name="gkxx_wyyz">
+      <comment>å¤&#x96;è¯­è¯­ç§&#x8d;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="124" parent="15" name="gkxx_tdcj">
+      <comment>é«&#x98;è&#x80;&#x83;æ&#x8a;&#x95;æ¡£æ&#x88;&#x90;ç»©</comment>
+      <data-type>double|0</data-type>
+    </column>
+    <column id="125" parent="15" name="gkxx_tdzy">
+      <comment>æ&#x8a;&#x95;æ¡£å¿&#x97;æ&#x84;¿</comment>
+      <data-type>char(1)|0</data-type>
+    </column>
+    <column id="126" parent="15" name="gkxx_kslb">
+      <comment>è&#x80;&#x83;ç&#x94;&#x9f;ç±»å&#x88;«</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="127" parent="15" name="gkxx_sjr">
+      <comment>æ&#x94;¶ä»¶äººï¼&#x8c;å½&#x95;å&#x8f;&#x96;é&#x80;&#x9a;ç&#x9f;¥ä¹¦æ&#x94;¶ä»¶äºº</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="128" parent="15" name="gkxx_kl">
+      <comment>ç§&#x91;ç±»,æ&#x96;&#x87;å&#x8f;²,ç&#x90;&#x86;å·¥,æ&#x96;&#x87;ç&#x90;&#x86;ç§&#x91;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="129" parent="15" name="gkxx_ksh">
+      <comment>è&#x80;&#x83;ç&#x94;&#x9f;å&#x8f;·</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="130" parent="15" name="gkxx_zxmc">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="131" parent="15" name="gkxx_id_UNIQUE">
+      <columns>gkxx_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="132" parent="15" name="gkxx_kslb_idx">
+      <columns>gkxx_kslb</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="133" parent="15" name="gkxx_wyyz_idx">
+      <columns>gkxx_wyyz</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="134" parent="15" name="gkxx_zxmc_idx">
+      <columns>gkxx_zxmc</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="135" parent="15" name="PRIMARY">
+      <columns>gkxx_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="136" parent="15" name="gkxx_id_UNIQUE">
+      <columns>gkxx_id</columns>
+      <underlying-index>gkxx_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="137" parent="15" name="gkxx_wyyz">
+      <columns>gkxx_wyyz</columns>
+      <ref-key>~.wyyz.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="138" parent="15" name="gkxx_kslb">
+      <columns>gkxx_kslb</columns>
+      <ref-key>~.kslb.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="139" parent="15" name="gkxx_zxmc">
+      <columns>gkxx_zxmc</columns>
+      <ref-key>~.highschool.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="140" parent="16" name="healthStatus_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="141" parent="16" name="healthStatus_type">
+      <comment>å&#x81;¥åº·ç&#x8a;¶æ&#x80;&#x81;ï¼&#x8c;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="142" parent="16" name="healthStatus_id_UNIQUE">
+      <columns>healthStatus_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="143" parent="16" name="PRIMARY">
+      <columns>healthStatus_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="144" parent="16" name="healthStatus_id_UNIQUE">
+      <columns>healthStatus_id</columns>
+      <underlying-index>healthStatus_id_UNIQUE</underlying-index>
+    </key>
+    <column id="145" parent="17" name="highSchool_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="146" parent="17" name="highSchool_name">
+      <comment>å­¦æ ¡å&#x90;&#x8d;ç§°</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="147" parent="17" name="highSchool_town">
+      <comment>æ&#x89;&#x80;å±&#x9e;å&#x9f;&#x8e;é&#x95;&#x87;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="148" parent="17" name="highSchool_id_UNIQUE">
+      <columns>highSchool_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="149" parent="17" name="PRIMARY">
+      <columns>highSchool_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="150" parent="17" name="highSchool_id_UNIQUE">
+      <columns>highSchool_id</columns>
+      <underlying-index>highSchool_id_UNIQUE</underlying-index>
+    </key>
+    <column id="151" parent="18" name="hj_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="152" parent="18" name="hj_town">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="153" parent="18" name="hj_inputTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="154" parent="18" name="hj_type">
+      <comment>1ï¼&#x8c;å&#x86;&#x9c;ä¸&#x9a;æ&#x88;·å&#x8f;£
+2ï¼&#x8c;é&#x9d;&#x9e;å&#x86;&#x9c;ä¸&#x9a;æ&#x88;·å&#x8f;£</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="155" parent="18" name="hj_id_UNIQUE">
+      <columns>hj_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="156" parent="18" name="hj_town_idx">
+      <columns>hj_town</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="157" parent="18" name="PRIMARY">
+      <columns>hj_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="158" parent="18" name="hj_id_UNIQUE">
+      <columns>hj_id</columns>
+      <underlying-index>hj_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="159" parent="18" name="hj_town">
+      <columns>hj_town</columns>
+      <ref-key>~.town.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="160" parent="19" name="idCard_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="161" parent="19" name="idCard_balance">
+      <comment>ä¸&#x80;å&#x8d;¡é&#x80;&#x9a;ä½&#x99;é¢&#x9d;</comment>
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="162" parent="19" name="idCard_number">
+      <comment>ä¸&#x80;å&#x8d;¡é&#x80;&#x9a;å&#x8f;·ç &#x81;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="163" parent="19" name="idCard_id_UNIQUE">
+      <columns>idCard_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="164" parent="19" name="PRIMARY">
+      <columns>idCard_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="165" parent="19" name="idCard_id_UNIQUE">
+      <columns>idCard_id</columns>
+      <underlying-index>idCard_id_UNIQUE</underlying-index>
+    </key>
+    <column id="166" parent="20" name="identity_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="167" parent="20" name="identity_number">
+      <comment>èº«ä»½è¯&#x81;ä»¶å&#x8f;·ç &#x81;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="168" parent="20" name="identity_type">
+      <comment>èº«ä»½è¯&#x81;ä»¶ç±»å&#x9e;&#x8b;ï¼&#x9a;èº«ä»½è¯&#x81;ã&#x80;&#x81;å±&#x85;ä½&#x8f;è¯&#x81;ã&#x80;&#x81;ç­¾è¯&#x81;ã&#x80;&#x81;æ&#x8a;¤ç&#x85;§ã&#x80;&#x81;æ&#x88;·å&#x8f;£æ&#x9c;¬ã&#x80;&#x81;å&#x86;&#x9b;äººè¯&#x81;ã&#x80;&#x81;å&#x9b;¢å&#x91;&#x98;è¯&#x81;ã&#x80;&#x81;å&#x85;&#x9a;å&#x91;&#x98;è¯&#x81;ã&#x80;&#x81;æ¸¯æ¾³é&#x80;&#x9a;è¡&#x8c;è¯&#x81;ç­&#x89;ï¼&#x9b;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="169" parent="20" name="identity_applyTime">
+      <comment>èº«ä»½è¯&#x81;ä»¶ç&#x94;³è¯·æ&#x97;¶é&#x97;´</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="170" parent="20" name="identity_endTime">
+      <comment>èº«ä»½è¯&#x81;ä»¶å&#x88;°æ&#x9c;&#x9f;æ&#x97;¶é&#x97;´</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <index id="171" parent="20" name="identity_id_UNIQUE">
+      <columns>identity_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="172" parent="20" name="identity_type_idx">
+      <columns>identity_type</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="173" parent="20" name="PRIMARY">
+      <columns>identity_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="174" parent="20" name="identity_id_UNIQUE">
+      <columns>identity_id</columns>
+      <underlying-index>identity_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="175" parent="20" name="identity_type">
+      <columns>identity_type</columns>
+      <ref-key>~.identitytype.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="176" parent="21" name="identityType_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="177" parent="21" name="identityTyp_type">
+      <comment>èº«ä»½è¯&#x81;ã&#x80;&#x81;å±&#x85;ä½&#x8f;è¯&#x81;ã&#x80;&#x81;ç­¾è¯&#x81;ã&#x80;&#x81;æ&#x8a;¤ç&#x85;§ã&#x80;&#x81;æ&#x88;·å&#x8f;£æ&#x9c;¬ã&#x80;&#x81;å&#x86;&#x9b;äººè¯&#x81;ã&#x80;&#x81;å&#x9b;¢å&#x91;&#x98;è¯&#x81;ã&#x80;&#x81;å&#x85;&#x9a;å&#x91;&#x98;è¯&#x81;ã&#x80;&#x81;æ¸¯æ¾³é&#x80;&#x9a;è¡&#x8c;è¯&#x81;ç­&#x89;ï¼&#x9b;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="178" parent="21" name="identityType_id_UNIQUE">
+      <columns>identityType_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="179" parent="21" name="PRIMARY">
+      <columns>identityType_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="180" parent="21" name="identityType_id_UNIQUE">
+      <columns>identityType_id</columns>
+      <underlying-index>identityType_id_UNIQUE</underlying-index>
+    </key>
+    <column id="181" parent="22" name="kslb_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="182" parent="22" name="kslb_type">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="183" parent="22" name="kslb_id_UNIQUE">
+      <columns>kslb_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="184" parent="22" name="PRIMARY">
+      <columns>kslb_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="185" parent="22" name="kslb_id_UNIQUE">
+      <columns>kslb_id</columns>
+      <underlying-index>kslb_id_UNIQUE</underlying-index>
+    </key>
+    <column id="186" parent="23" name="loan_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="187" parent="23" name="loan_type">
+      <comment>è´·æ¬¾ç±»å&#x9e;&#x8b;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="188" parent="23" name="loan_amount">
+      <comment>è´·æ¬¾é&#x87;&#x91;é¢&#x9d;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="189" parent="23" name="loan_applyTime">
+      <comment>ç&#x94;³è¯·æ&#x97;¶é&#x97;´</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <index id="190" parent="23" name="loan_id_UNIQUE">
+      <columns>loan_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="191" parent="23" name="loan_type_idx">
+      <columns>loan_type</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="192" parent="23" name="PRIMARY">
+      <columns>loan_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="193" parent="23" name="loan_id_UNIQUE">
+      <columns>loan_id</columns>
+      <underlying-index>loan_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="194" parent="23" name="loan_type">
+      <columns>loan_type</columns>
+      <ref-key>~.loantype.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="195" parent="24" name="loanType_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="196" parent="24" name="loanType_type">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="197" parent="24" name="loanType_type_UNIQUE">
+      <columns>loanType_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="198" parent="24" name="PRIMARY">
+      <columns>loanType_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="199" parent="24" name="loanType_type_UNIQUE">
+      <columns>loanType_id</columns>
+      <underlying-index>loanType_type_UNIQUE</underlying-index>
+    </key>
+    <column id="200" parent="25" name="log_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="201" parent="25" name="log_tableName">
+      <comment>æ&#x93;&#x8d;ä½&#x9c;è¡¨å&#x90;&#x8d;å­&#x97;,å&#x8f;¯ä»¥é&#x97;´æ&#x8e;¥æ&#x9f;¥å&#x87;ºæ&#x9d;¥æ&#x93;&#x8d;ä½&#x9c;å­&#x97;æ®µå&#x90;&#x8d;å­&#x97;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="202" parent="25" name="log_landTime">
+      <comment>ç&#x99;»é&#x99;&#x86;æ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="203" parent="25" name="log_outTime">
+      <comment>é&#x80;&#x80;å&#x87;ºæ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="204" parent="25" name="log_ip">
+      <comment>ç&#x99;»é&#x99;&#x86;IP</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="205" parent="25" name="log_operateType">
+      <comment>æ&#x93;&#x8d;ä½&#x9c;ç±»å&#x9e;&#x8b;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="206" parent="25" name="log_oldValue">
+      <comment>æ&#x9b;´æ&#x96;°å&#x89;&#x8d;ç&#x9a;&#x84;æ&#x97;§å&#x80;¼</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="207" parent="25" name="log_newValue">
+      <comment>æ&#x9b;´æ&#x96;°å&#x90;&#x8e;ç&#x9a;&#x84;æ&#x96;°å&#x80;¼</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="208" parent="25" name="log_browser">
+      <comment>ç&#x99;»é&#x99;&#x86;æµ&#x8f;è§&#x88;å&#x99;¨å&#x90;&#x8d;å­&#x97;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="209" parent="25" name="log_id_UNIQUE">
+      <columns>log_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="210" parent="25" name="log_tableName_idx">
+      <columns>log_tableName</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="211" parent="25" name="PRIMARY">
+      <columns>log_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="212" parent="25" name="log_id_UNIQUE">
+      <columns>log_id</columns>
+      <underlying-index>log_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="213" parent="25" name="log_tableName">
+      <columns>log_tableName</columns>
+      <ref-key>~.dbdescription.DBdescription_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="214" parent="26" name="major_name">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="215" parent="26" name="major_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="216" parent="26" name="major_yx">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="217" parent="26" name="major_id_UNIQUE">
+      <columns>major_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="218" parent="26" name="major_yx_idx">
+      <columns>major_yx</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="219" parent="26" name="PRIMARY">
+      <columns>major_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="220" parent="26" name="major_id_UNIQUE">
+      <columns>major_id</columns>
+      <underlying-index>major_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="221" parent="26" name="major_yx">
+      <columns>major_yx</columns>
+      <ref-key>~.yx.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="222" parent="27" name="nation_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="223" parent="27" name="nation_name">
+      <comment>æ°&#x91;æ&#x97;&#x8f;å&#x90;&#x8d;ç§°</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="224" parent="27" name="nation_country">
+      <comment>æ&#x89;&#x80;å±&#x9e;å&#x9b;½å®¶</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="225" parent="27" name="nation_country_idx">
+      <columns>nation_country</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="226" parent="27" name="PRIMARY">
+      <columns>nation_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="227" parent="27" name="nation_country">
+      <columns>nation_country</columns>
+      <ref-key>~.country.country_encoding_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="228" parent="28" name="picture_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="229" parent="28" name="picture_path">
+      <comment>ç&#x85;§ç&#x89;&#x87;å­&#x98;å&#x82;¨è·¯å¾&#x84;</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="230" parent="28" name="picture_inputTime">
+      <comment>ç&#x85;§ç&#x89;&#x87;å­&#x98;å&#x82;¨ï¼&#x88;æ&#x8f;&#x90;äº¤å&#x88;°æ&#x95;°æ&#x8d;®åº&#x93;ï¼&#x89;æ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="231" parent="28" name="picture_deleteTime">
+      <comment>ç&#x85;§ç&#x89;&#x87;å&#x88; é&#x99;¤æ&#x97;¶é&#x97;´ï¼&#x88;å¦&#x82;æ&#x9e;&#x9c;æ­¤æ&#x97;¶é&#x97;´å­&#x98;å&#x9c;¨å&#x88;&#x99;æ&#x98;¾ç¤ºå&#x9b;¾ç&#x89;&#x87;å&#x88; é&#x99;¤ï¼&#x89;</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="232" parent="28" name="picture_name">
+      <comment>è¿&#x99;é&#x87;&#x8c;æ&#x98;¯ä¸ºäº&#x86;é&#x98;²æ­¢å&#x9b;¾ç&#x89;&#x87;ç&#x9a;&#x84;å&#x90;&#x8d;å­&#x97;å¥½é&#x95;¿ç&#x9a;&#x84;æ&#x83;&#x85;å&#x86;µï¼&#x88;å&#x9b;¾ç&#x89;&#x87;å&#x90;&#x8d;å­&#x97;å¥½é&#x95;¿ä¸&#x80;è&#x88;¬é&#x83;½æ&#x98;¯ç³»ç»&#x9f;èµ·ç&#x9a;&#x84;å&#x90;&#x8d;å­&#x97;ï¼&#x89;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="233" parent="28" name="picture_owner">
+      <comment>å&#x9b;¾ç&#x89;&#x87;æ&#x89;&#x80;æ&#x9c;&#x89;è&#x80;&#x85;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="234" parent="28" name="picture_type">
+      <comment>è¿&#x99;é&#x87;&#x8c;ç&#x9a;&#x84;ç±»å&#x88;«å°±æ&#x98;¯è¯´æ&#x98;&#x8e;è¿&#x99;ä¸ªå&#x9b;¾ç&#x89;&#x87;æ&#x98;¯ä»&#x80;ä¹&#x88;ç±»å&#x9e;&#x8b;ç&#x9a;&#x84;å&#x9b;¾ç&#x89;&#x87;ï¼&#x8c;0æ&#x98;¯å­¦ç&#x94;&#x9f;è¯&#x81;ä¸&#x8a;ç&#x9a;&#x84;ï¼&#x8c;1æ&#x98;¯ä¸&#x80;å¯¸ç&#x85;§ç&#x89;&#x87;ï¼&#x8c;ç­&#x89;ç­&#x89;ä»¥æ­¤ç±»æ&#x8e;¨ã&#x80;&#x82;ã&#x80;&#x82;ã&#x80;&#x82;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="235" parent="28" name="picture_id_UNIQUE">
+      <columns>picture_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="236" parent="28" name="picture_owner_idx">
+      <columns>picture_owner</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="237" parent="28" name="PRIMARY">
+      <columns>picture_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="238" parent="28" name="picture_id_UNIQUE">
+      <columns>picture_id</columns>
+      <underlying-index>picture_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="239" parent="28" name="picture_owner">
+      <columns>picture_owner</columns>
+      <ref-key>~.student.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="240" parent="29" name="province_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="241" parent="29" name="province_country">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="242" parent="29" name="province_encoding">
+      <comment>ç&#x9c;&#x81;ä»½ç¼&#x96;ç &#x81;</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="243" parent="29" name="province_encoding_UNIQUE">
+      <columns>province_encoding</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="244" parent="29" name="PRIMARY">
+      <columns>province_encoding</columns>
+      <primary>1</primary>
+    </key>
+    <key id="245" parent="29" name="province_encoding_UNIQUE">
+      <columns>province_encoding</columns>
+      <underlying-index>province_encoding_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="246" parent="29" name="province_country">
+      <columns>province_encoding</columns>
+      <ref-key>~.country.country_encoding_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="247" parent="30" name="relative_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="248" parent="30" name="relative_relation">
+      <comment>å&#x85;³ç³»ï¼&#x8c;eg:ç&#x88;¶äº²ï¼&#x8c;æ¯&#x8d;äº²ï¼&#x8c;å&#x8f;&#x94;å&#x8f;&#x94;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="249" parent="30" name="relative_name">
+      <comment>äº²æ&#x88;&#x9a;ç&#x9a;&#x84;å§&#x93;å&#x90;&#x8d;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="250" parent="30" name="relative_description">
+      <comment>å&#x85;³ç³»è¯´æ&#x98;&#x8e;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="251" parent="30" name="relative_nation">
+      <comment>æ°&#x91;æ&#x97;&#x8f;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="252" parent="30" name="relative_gzdw">
+      <comment>å·¥ä½&#x9c;å&#x8d;&#x95;ä½&#x8d;å&#x90;&#x8d;å­&#x97;</comment>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="253" parent="30" name="relative_address">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="254" parent="30" name="relative_phone">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="255" parent="30" name="relative_identity">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="256" parent="30" name="relative_duty">
+      <comment>è&#x81;&#x8c;å&#x8a;¡</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="257" parent="30" name="relative_bloodType">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="258" parent="30" name="relative_healthStatus">
+      <comment>å&#x81;¥åº·ç&#x8a;¶å&#x86;µ</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="259" parent="30" name="parents_id_UNIQUE">
+      <columns>relative_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="260" parent="30" name="relative_address_idx">
+      <columns>relative_address</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="261" parent="30" name="relative_bloodType_idx">
+      <columns>relative_bloodType</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="262" parent="30" name="relative_description_idx">
+      <columns>relative_description</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="263" parent="30" name="relative_healthStatus_idx">
+      <columns>relative_healthStatus</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="264" parent="30" name="relative_identity_idx">
+      <columns>relative_identity</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="265" parent="30" name="relative_nation_idx">
+      <columns>relative_nation</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="266" parent="30" name="PRIMARY">
+      <columns>relative_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="267" parent="30" name="parents_id_UNIQUE">
+      <columns>relative_id</columns>
+      <underlying-index>parents_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="268" parent="30" name="relative_description">
+      <columns>relative_description</columns>
+      <ref-key>~.description.personalDescription_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="269" parent="30" name="relative_nation">
+      <columns>relative_nation</columns>
+      <ref-key>~.nation.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="270" parent="30" name="relative_address">
+      <columns>relative_address</columns>
+      <ref-key>~.address.address_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="271" parent="30" name="relative_identity">
+      <columns>relative_identity</columns>
+      <ref-key>~.identity.identity_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="272" parent="30" name="relative_bloodType">
+      <columns>relative_bloodType</columns>
+      <ref-key>~.bloodtype.bloodType_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="273" parent="30" name="relative_healthStatus">
+      <columns>relative_healthStatus</columns>
+      <ref-key>~.healthstatus.healthStatus_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="274" parent="31" name="religion_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="275" parent="31" name="religion_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="276" parent="31" name="religion_id_UNIQUE">
+      <columns>religion_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="277" parent="31" name="PRIMARY">
+      <columns>religion_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="278" parent="31" name="religion_id_UNIQUE">
+      <columns>religion_id</columns>
+      <underlying-index>religion_id_UNIQUE</underlying-index>
+    </key>
+    <column id="279" parent="32" name="role_type">
+      <comment>è§&#x92;è&#x89;²ç±»å&#x9e;&#x8b;ï¼&#x8c;æ¯&#x94;å¦&#x82;è¯´å­¦ç&#x94;&#x9f;ï¼&#x8c;è¿&#x8e;æ&#x96;°äººå&#x91;&#x98;ï¼&#x88;æ¯&#x8f;å¹´å¿&#x97;æ&#x84;¿æ&#x8e;¥å¾&#x85;æ&#x96;°ç&#x94;&#x9f;ç&#x9a;&#x84;äººï¼&#x89;ï¼&#x8c;æ&#x8b;&#x9b;ç&#x94;&#x9f;å&#x8a;&#x9e;äº&#x8b;å¤&#x84;ï¼&#x8c;è¾&#x85;å¯¼å&#x91;&#x98;ï¼&#x8c;å&#x90;&#x8e;å&#x8b;¤å®¿ç®¡ï¼&#x8c;è´¢å&#x8a;¡å¤&#x84;ï¼&#x8c;ç&#x94;µæ&#x95;&#x99;ä¸­å¿&#x83;ï¼&#x8c;å­¦ç&#x94;&#x9f;å¤&#x84;ï¼&#x8c;æ&#x95;&#x99;å&#x8a;¡å¤&#x84;ï¼&#x8c;å&#x9b;¢å§&#x94;ï¼&#x8c;ä¿&#x9d;å&#x8d;«å¤&#x84;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="280" parent="32" name="role_rank">
+      <comment>è§&#x92;è&#x89;²ç­&#x89;çº§</comment>
+      <data-type>int(5)|0</data-type>
+    </column>
+    <column id="281" parent="32" name="role_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <index id="282" parent="32" name="role_id_UNIQUE">
+      <columns>role_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="283" parent="32" name="PRIMARY">
+      <columns>role_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="284" parent="32" name="role_id_UNIQUE">
+      <columns>role_id</columns>
+      <underlying-index>role_id_UNIQUE</underlying-index>
+    </key>
+    <column id="285" parent="33" name="shuoshuo_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="286" parent="33" name="shuoshuo_releaseTime">
+      <comment>è¯´è¯´å&#x8f;&#x91;å¸&#x83;æ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="287" parent="33" name="shuoshuo_content">
+      <comment>è¯´è¯´å&#x86;&#x85;å®¹</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="288" parent="33" name="shuoshuo_promulgator">
+      <comment>è¯´è¯´å&#x8f;&#x91;å¸&#x83;è&#x80;&#x85;ï¼&#x8c;è°&#x81;å&#x86;&#x99;ç&#x9a;&#x84;è¿&#x99;æ&#x9d;¡è¯´è¯´</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="289" parent="33" name="shuoshuo_id_UNIQUE">
+      <columns>shuoshuo_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="290" parent="33" name="shuoshuo_promulgator_idx">
+      <columns>shuoshuo_promulgator</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="291" parent="33" name="PRIMARY">
+      <columns>shuoshuo_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="292" parent="33" name="shuoshuo_id_UNIQUE">
+      <columns>shuoshuo_id</columns>
+      <underlying-index>shuoshuo_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="293" parent="33" name="shuoshuo_promulgator">
+      <columns>shuoshuo_promulgator</columns>
+      <ref-key>~.student.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="294" parent="34" name="shuoshuoComment_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="295" parent="34" name="shuoshuoComment_content">
+      <comment>è¯&#x84;è®ºå&#x86;&#x85;å®¹</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="296" parent="34" name="shuoshuoComment_releaseTime">
+      <comment>å&#x8f;&#x91;å¸&#x83;æ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="297" parent="34" name="shuoshuoComment_promulgator">
+      <comment>å&#x8f;&#x91;å¸&#x83;è&#x80;&#x85;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="298" parent="34" name="shuoshuoCommentcol_previousComment">
+      <comment>å&#x8f;¯ä»¥æ&#x98;¯ä¸&#x8a;ä¸&#x80;ä¸ªè¯&#x84;è®ºï¼&#x8c;å&#x8f;¯ä»¥ç&#x9b;´æ&#x8e;¥æ&#x98;¯ä¸&#x8a;ä¸&#x80;ä¸ªè¯´è¯´ã&#x80;&#x82;å&#x9b; ä¸ºè¯&#x84;è®ºæ&#x9c;&#x89;å&#x8f;¯è&#x83;½æ&#x98;¯ç&#x9b;´æ&#x8e;¥é&#x92;&#x88;å¯¹è¯´è¯´æ&#x9d;¥ç&#x9a;&#x84;ã&#x80;&#x82;ä¹&#x9f;æ&#x9c;&#x89;å&#x8f;¯è&#x83;½æ&#x98;¯ç&#x9b;´æ&#x8e;¥é&#x92;&#x88;å¯¹è¯´è¯´è¯&#x84;è®ºæ&#x9d;¥ç&#x9a;&#x84;ã&#x80;&#x82;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="299" parent="34" name="PRIMARY">
+      <columns>shuoshuoComment_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="300" parent="35" name="shuoshuoLike_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="301" parent="35" name="shuoshuoLike_liker">
+      <comment>ç&#x82;¹èµ&#x9e;ç&#x9a;&#x84;äººï¼&#x8c;æ&#x98;¯å&#x93;ªä¸ªäººç&#x82;¹ç&#x9a;&#x84;èµ&#x9e;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="302" parent="35" name="shuoshuoLike_shuoshuo">
+      <comment>ç&#x82;¹èµ&#x9e;ä»&#x8e;å±&#x9e;äº&#x8e;å&#x93;ªæ&#x9d;¡è¯´è¯´</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="303" parent="35" name="shuoshuoLike_shuoshuo_idx">
+      <columns>shuoshuoLike_shuoshuo</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="304" parent="35" name="shuoshuo_liker_idx">
+      <columns>shuoshuoLike_liker</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="305" parent="35" name="PRIMARY">
+      <columns>shuoshuoLike_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="306" parent="35" name="shuoshuoLike_liker">
+      <columns>shuoshuoLike_liker</columns>
+      <ref-key>~.student.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="307" parent="35" name="shuoshuoLike_shuoshuo">
+      <columns>shuoshuoLike_shuoshuo</columns>
+      <ref-key>~.shuoshuo.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="308" parent="36" name="shuoshuoPicture_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="309" parent="36" name="shuoshuoPicture_path">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="310" parent="36" name="shuoshuoPicture_name">
+      <comment>è¿&#x99;é&#x87;&#x8c;æ&#x98;¯ä¸ºäº&#x86;é&#x98;²æ­¢æ&#x9c;&#x89;äº&#x9b;å&#x9b;¾ç&#x89;&#x87;å&#x90;&#x8d;å­&#x97;å¥½é&#x95;¿ç&#x9a;&#x84;æ&#x83;&#x85;å&#x86;µï¼&#x88;å&#x90;&#x8d;å­&#x97;å¥½é&#x95;¿ç&#x9a;&#x84;å&#x9b;¾ç&#x89;&#x87;ä¸&#x80;è&#x88;¬é&#x83;½æ&#x98;¯ç³»ç»&#x9f;èµ·ç&#x9a;&#x84;å&#x90;&#x8d;ï¼&#x89;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="311" parent="36" name="shuoshuoPicture_shuoshuo">
+      <comment>å&#x9b;¾ç&#x89;&#x87;æ&#x89;&#x80;å±&#x9e;ç&#x9a;&#x84;è¯´è¯´</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="312" parent="36" name="shuoshuoPicture_idx">
+      <columns>shuoshuoPicture_shuoshuo</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="313" parent="36" name="PRIMARY">
+      <columns>shuoshuoPicture_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="314" parent="36" name="shuoshuoPicture">
+      <columns>shuoshuoPicture_shuoshuo</columns>
+      <ref-key>~.shuoshuo.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="315" parent="37" name="student_name">
+      <comment>å­¦ç&#x94;&#x9f;å§&#x93;å&#x90;&#x8d;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="316" parent="37" name="student_sex">
+      <comment>å­¦ç&#x94;&#x9f;æ&#x80;§å&#x88;« å&#x80;¼ä¸º1æ&#x97;¶æ&#x98;¯ç&#x94;·ç&#x94;&#x9f;  0æ&#x97;¶æ&#x98;¯å¥³ç&#x94;&#x9f;</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="317" parent="37" name="student_nation">
+      <comment>æ°&#x91;æ&#x97;&#x8f;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="318" parent="37" name="student_zzmm">
+      <comment>æ&#x94;¿æ²»é&#x9d;¢è²&#x8c;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="319" parent="37" name="student_identity">
+      <comment>èº«ä»½è¯&#x81;å&#x8f;·</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="320" parent="37" name="student_zipCode">
+      <comment>é&#x82;®æ&#x94;¿ç¼&#x96;ç &#x81;</comment>
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="321" parent="37" name="student_phone">
+      <comment>è&#x81;&#x94;ç³»ç&#x94;µè¯&#x9d;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="322" parent="37" name="student_xz">
+      <comment>å­¦å&#x88;¶ï¼&#x8c;ä¸&#x89;å¹´æ&#x88;&#x96;å&#x9b;&#x9b;å¹´ä¹&#x8b;ç±»ç&#x9a;&#x84;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="323" parent="37" name="student_class">
+      <comment>ç&#x8f;­çº§</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="324" parent="37" name="student_lqzy">
+      <comment>å½&#x95;å&#x8f;&#x96;ä¸&#x93;ä¸&#x9a;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="325" parent="37" name="student_relative">
+      <comment>äº²æ&#x88;&#x9a;ï¼&#x8c;æ&#x9c;&#x89;ç&#x88;¶æ¯&#x8d;äº²å&#x95;&#x8a;ï¼&#x8c;è¿&#x98;æ&#x9c;&#x89;å&#x85;¶ä»&#x96;äº²æ&#x88;&#x9a;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="326" parent="37" name="student_QQ">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="327" parent="37" name="student_dormitory">
+      <comment>å®¿è&#x88;&#x8d;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="328" parent="37" name="student_personalDescription">
+      <comment>ä¸ªäººæ&#x8f;&#x8f;è¿°ï¼&#x8c;ç&#x89;¹é&#x95;¿ï¼&#x8c;ç&#x88;±å¥½ä¹&#x8b;ç±»ç&#x9a;&#x84;ï¼&#x8c;ç±»ä¼¼äº&#x8e;è&#x87;ªæ&#x88;&#x91;ä»&#x8b;ç»&#x8d;ä¹&#x8b;ç±»ç&#x9a;&#x84;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="329" parent="37" name="student_religion">
+      <comment>å®&#x97;æ&#x95;&#x99;ä¿¡ä»°</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="330" parent="37" name="student_address">
+      <comment>å&#x9c;°å&#x9d;&#x80;ï¼&#x8c;è¿&#x99;ä¸ªç´¢å¼&#x95;è¡¨è®°å½&#x95;äº&#x86;å­¦ç&#x94;&#x9f;æ&#x89;&#x80;æ&#x9c;&#x89;å&#x85;³äº&#x8e;å&#x9c;°å&#x9d;&#x80;ç&#x9a;&#x84;å­&#x97;æ®µ</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="331" parent="37" name="student_time">
+      <comment>æ&#x97;¶é&#x97;´ï¼&#x8c;è¿&#x99;ä¸ªç´¢å¼&#x95;è¡¨è®°å½&#x95;äº&#x86;å­¦ç&#x94;&#x9f;æ&#x89;&#x80;æ&#x9c;&#x89;å&#x85;³äº&#x8e;æ&#x97;¶é&#x97;´ç&#x9a;&#x84;å­&#x97;æ®µ</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="332" parent="37" name="student_diadic">
+      <comment>è¿&#x99;ä¸ªç´¢å¼&#x95;è¡¨é&#x87;&#x8c;é&#x9d;¢è®°å½&#x95;äº&#x86;æ&#x89;&#x80;æ&#x9c;&#x89;å&#x85;³äº&#x8e;å­¦ç&#x94;&#x9f;ç&#x9a;&#x84;å&#x8f;&#x8c;å&#x80;¼å­&#x97;æ®µï¼&#x8c;eg,æ&#x98;¯å&#x90;¦ç&#x8b;¬ç&#x94;&#x9f;å­&#x90;å¥³ï¼&#x8c;æ&#x98;¯å&#x90;¦å&#x8f;&#x97;è¿&#x87;å­¦å&#x89;&#x8d;æ&#x95;&#x99;è&#x82;²ï¼&#x8c;æ&#x98;¯å&#x90;¦ä¸ºç&#x95;&#x99;å®&#x88;å&#x84;¿ç«¥ï¼&#x8c;æ&#x98;¯å&#x90;¦ä¸ºè¿&#x9b;å&#x9f;&#x8e;å&#x8a;¡å·¥äººå&#x91;&#x98;é&#x9a;&#x8f;è¿&#x81;å­&#x90;å¥³ï¼&#x8c;æ&#x98;¯å&#x90;¦å­¤å&#x84;¿ï¼&#x8c;æ&#x98;¯å&#x90;¦ç&#x83;&#x88;å£«æ&#x88;&#x96;ä¼&#x98;æ&#x8a;&#x9a;å­&#x90;å¥³</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="333" parent="37" name="student_gkxx">
+      <comment>é«&#x98;è&#x80;&#x83;ä¿¡æ&#x81;¯ï¼&#x8c;è¿&#x99;ä¸ªå­&#x97;æ®µè®°å½&#x95;äº&#x86;æ&#x89;&#x80;æ&#x9c;&#x89;è&#x80;&#x83;ç&#x94;&#x9f;å&#x8f;ªæ&#x9c;&#x89;é«&#x98;è&#x80;&#x83;æ&#x97;¶æ&#x89;&#x8d;ä¼&#x9a;ç&#x94;¨å&#x88;°ç&#x9a;&#x84;ä¿¡æ&#x81;¯ï¼&#x8c;ä¹&#x8b;å&#x90;&#x8e;ç&#x94;&#x9f;æ´»ä¸­å°±ä¸&#x8d;æ&#x80;&#x8e;ä¹&#x88;ç&#x94;¨äº&#x86;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="334" parent="37" name="student_xf">
+      <comment>å­¦è´¹,å­¦è´¹è¡¨é&#x87;&#x8c;æ&#x9c;&#x89;é&#x93;¶è¡&#x8c;å&#x8d;¡å&#x8f;·</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="335" parent="37" name="student_idCard">
+      <comment>ä¸&#x80;å&#x8d;¡é&#x80;&#x9a;ï¼&#x8c;æ&#x9c;&#x89;ä¸&#x80;å&#x8d;¡é&#x80;&#x9a;ä½&#x99;é¢&#x9d;ï¼&#x8c;ä¸&#x80;å&#x8d;¡é&#x80;&#x9a;å&#x8f;·ç &#x81;ï¼&#x8c;ä¸&#x80;å&#x8d;¡é&#x80;&#x9a;ç&#x9a;&#x84;å¤§å¤´å&#x83;&#x8f;ï¼&#x88;å&#x93;&#x88;å&#x93;&#x88;ï¼&#x89;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="336" parent="37" name="student_bloodType">
+      <comment>è¡&#x80;å&#x9e;&#x8b;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="337" parent="37" name="student_healthStatus">
+      <comment>å&#x81;¥åº·ç&#x8a;¶å&#x86;µ</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="338" parent="37" name="student_loan">
+      <comment>è´·æ¬¾</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="339" parent="37" name="student-nation_idx">
+      <columns>student_nation</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="340" parent="37" name="student_address_idx">
+      <columns>student_address</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="341" parent="37" name="student_bloodType_idx">
+      <columns>student_bloodType</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="342" parent="37" name="student_class_idx">
+      <columns>student_class</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="343" parent="37" name="student_diadic_idx">
+      <columns>student_diadic</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="344" parent="37" name="student_dormitory_idx">
+      <columns>student_dormitory</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="345" parent="37" name="student_gkxx_idx">
+      <columns>student_gkxx</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="346" parent="37" name="student_healthStatus_idx">
+      <columns>student_healthStatus</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="347" parent="37" name="student_idCard_idx">
+      <columns>student_idCard</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="348" parent="37" name="student_loan_idx">
+      <columns>student_loan</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="349" parent="37" name="student_lqzy_idx">
+      <columns>student_lqzy</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="350" parent="37" name="student_name_idx">
+      <columns>student_name</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="351" parent="37" name="student_personalDescription_idx">
+      <columns>student_personalDescription</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="352" parent="37" name="student_relative_idx">
+      <columns>student_relative</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="353" parent="37" name="student_religion_idx">
+      <columns>student_religion</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="354" parent="37" name="student_sfzh_UNIQUE">
+      <columns>student_identity</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="355" parent="37" name="student_time_idx">
+      <columns>student_time</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="356" parent="37" name="student_xf_idx">
+      <columns>student_xf</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="357" parent="37" name="student_zzmm_idx">
+      <columns>student_zzmm</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="358" parent="37" name="PRIMARY">
+      <columns>student_identity</columns>
+      <primary>1</primary>
+    </key>
+    <key id="359" parent="37" name="student_sfzh_UNIQUE">
+      <columns>student_identity</columns>
+      <underlying-index>student_sfzh_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="360" parent="37" name="student_name">
+      <columns>student_name</columns>
+      <ref-key>~.studentname.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="361" parent="37" name="student-nation">
+      <columns>student_nation</columns>
+      <ref-key>~.nation.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="362" parent="37" name="student_zzmm">
+      <columns>student_zzmm</columns>
+      <ref-key>~.zzmm.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="363" parent="37" name="student_identity">
+      <columns>student_identity</columns>
+      <ref-key>~.identity.identity_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="364" parent="37" name="student_class">
+      <columns>student_class</columns>
+      <ref-key>~.class.class_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="365" parent="37" name="student_lqzy">
+      <columns>student_lqzy</columns>
+      <ref-key>~.major.major_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="366" parent="37" name="student_relative">
+      <columns>student_relative</columns>
+      <ref-key>~.relative.parents_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="367" parent="37" name="student_dormitory">
+      <columns>student_dormitory</columns>
+      <ref-key>~.dormitory.dormitroy_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="368" parent="37" name="student_personalDescription">
+      <columns>student_personalDescription</columns>
+      <ref-key>~.description.personalDescription_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="369" parent="37" name="student_religion">
+      <columns>student_religion</columns>
+      <ref-key>~.religion.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="370" parent="37" name="student_address">
+      <columns>student_address</columns>
+      <ref-key>~.address.address_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="371" parent="37" name="student_time">
+      <columns>student_time</columns>
+      <ref-key>~.studenttime.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="372" parent="37" name="student_diadic">
+      <columns>student_diadic</columns>
+      <ref-key>~.studentdiadic.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="373" parent="37" name="student_gkxx">
+      <columns>student_gkxx</columns>
+      <ref-key>~.gkxx.gkxx_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="374" parent="37" name="student_xf">
+      <columns>student_xf</columns>
+      <ref-key>~.xf.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="375" parent="37" name="student_idCard">
+      <columns>student_idCard</columns>
+      <ref-key>~.idcard.idCard_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="376" parent="37" name="student_bloodType">
+      <columns>student_bloodType</columns>
+      <ref-key>~.bloodtype.bloodType_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="377" parent="37" name="student_healthStatus">
+      <columns>student_healthStatus</columns>
+      <ref-key>~.healthstatus.healthStatus_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="378" parent="37" name="student_loan">
+      <columns>student_loan</columns>
+      <ref-key>~.loan.loan_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="379" parent="38" name="studentDiadic_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="380" parent="38" name="studentDiadic_onlyChild">
+      <comment>æ&#x98;¯å&#x90;¦ç&#x8b;¬ç&#x94;&#x9f;å­&#x90;å¥³ï¼&#x8c;1ä¸ºæ&#x98;¯ï¼&#x8c;0ä¸ºå&#x90;¦</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="381" parent="38" name="studentDiadic_preprimary">
+      <comment>æ&#x98;¯å&#x90;¦å&#x8f;&#x97;è¿&#x87;å­¦å&#x89;&#x8d;æ&#x95;&#x99;è&#x82;²ï¼&#x8c;1ä¸ºæ&#x98;¯ï¼&#x8c;0ä¸ºå&#x90;¦</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="382" parent="38" name="studentDiadic_leftBehindChildren">
+      <comment>æ&#x98;¯å&#x90;¦ä¸ºç&#x95;&#x99;å®&#x88;å&#x84;¿ç«¥ï¼&#x8c;1ä¸ºæ&#x98;¯ï¼&#x8c;0ä¸ºå&#x90;¦</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="383" parent="38" name="studentDiadic_jcwgrysqzn">
+      <comment>è¿&#x9b;å&#x9f;&#x8e;å&#x8a;¡å·¥äººå&#x91;&#x98;é&#x9a;&#x8f;è¿&#x81;å­&#x90;å¥³ï¼&#x8c;1ä¸ºæ&#x98;¯ï¼&#x8c;0ä¸ºå&#x90;¦</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="384" parent="38" name="studentDiadic_orphan">
+      <comment>å­¤å&#x84;¿ï¼&#x8c;1ä¸ºæ&#x98;¯ï¼&#x8c;0ä¸ºå&#x90;¦</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="385" parent="38" name="studentDiadic_lshyfzn">
+      <comment>ç&#x83;&#x88;å£«æ&#x88;&#x96;ä¼&#x98;æ&#x8a;&#x9a;å­&#x90;å¥³,1ä¸ºæ&#x98;¯ï¼&#x8c;0ä¸ºå&#x90;¦</comment>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <index id="386" parent="38" name="studentDiadic_UNIQUE">
+      <columns>studentDiadic_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="387" parent="38" name="PRIMARY">
+      <columns>studentDiadic_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="388" parent="38" name="studentDiadic_UNIQUE">
+      <columns>studentDiadic_id</columns>
+      <underlying-index>studentDiadic_UNIQUE</underlying-index>
+    </key>
+    <column id="389" parent="39" name="studentName_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="390" parent="39" name="studentName_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="391" parent="39" name="studentName_inputTime">
+      <comment>è¾&#x93;å&#x85;¥æ&#x97;¶é&#x97;´ã&#x80;&#x82;æ ¹æ&#x8d;®è¾&#x93;å&#x85;¥æ&#x97;¶é&#x97;´ç&#x9a;&#x84;æ&#x97;©æ&#x99;&#x9a;å&#x88;¤æ&#x96;­ï¼&#x8c;å&#x93;ªä¸&#x80;ä¸ªæ&#x98;¯æ&#x9c;&#x80;è¿&#x91;ç&#x9a;&#x84;ã&#x80;&#x82;</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="392" parent="39" name="studentName_id_UNIQUE">
+      <columns>studentName_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="393" parent="39" name="PRIMARY">
+      <columns>studentName_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="394" parent="39" name="studentName_id_UNIQUE">
+      <columns>studentName_id</columns>
+      <underlying-index>studentName_id_UNIQUE</underlying-index>
+    </key>
+    <column id="395" parent="40" name="studentTime_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="396" parent="40" name="studentTime_birthday">
+      <comment>ç&#x94;&#x9f;æ&#x97;¥</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="397" parent="40" name="studentTime_rxsj">
+      <comment>å­¦ç&#x94;&#x9f;å&#x85;¥å­¦æ&#x97;¶é&#x97;´ï¼&#x8c;egï¼&#x9a;ä¹&#x9d;æ&#x9c;&#x88;11æ&#x97;¥</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="398" parent="40" name="studentTime_register">
+      <comment>ç&#x99;»è®°æ&#x97;¶é&#x97;´ï¼&#x8c;å°±æ&#x98;¯å­¦ç&#x94;&#x9f;å&#x85;¥å­¦æ&#x8a;¥å&#x88;°ç&#x9a;&#x84;æ&#x97;¶é&#x97;´</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="399" parent="40" name="studentTime_expectRegister">
+      <comment>è®©å­¦ç&#x94;&#x9f;è&#x87;ªå·±å¡«ä¸&#x80;ä¸ªé¢&#x84;è®¡ç&#x99;»è®°æ&#x97;¶é&#x97;´ï¼&#x8c;å&#x8f;¯è&#x83;½ä¼&#x9a;ä»&#x80;ä¹&#x88;æ&#x97;¶å&#x80;&#x99;æ&#x9d;¥ï¼&#x8c;å¯¹å&#x93;ªä¸&#x80;å¤©å&#x8f;¯è&#x83;½ä¼&#x9a;æ&#x9c;&#x89;å¤&#x9a;å°&#x91;å­¦ç&#x94;&#x9f;æ&#x9d;¥ï¼&#x8c;è¿&#x9b;è¡&#x8c;é¢&#x84;ä¼°ï¼&#x8c;æ&#x9d;¥å®&#x89;æ&#x8e;&#x92;è¿&#x8e;æ&#x96;°å·¥ä½&#x9c;.,å&#x9b; ä¸ºè¦&#x81;è¿&#x9b;è¡&#x8c;é¢&#x84;æ&#x8a;¥é&#x81;&#x93;ï¼&#x8c;å&#x88;&#x99;æ­¤è¡¨ç&#x9a;&#x84;studentTime_expectRegisterå­&#x97;æ®µä¸ºå&#x88;¤æ&#x96;­è¯¥å­¦ç&#x94;&#x9f;æ&#x98;¯å&#x90;¦è¦&#x81;æ&#x9d;¥ç&#x9a;&#x84;æ&#x84;&#x8f;æ&#x80;&#x9d;ï¼&#x8c;å¦&#x82;æ&#x9e;&#x9c;ä»&#x96;å¡«å&#x86;&#x99;äº&#x86;é¢&#x84;è®¡å&#x88;°è¾¾æ&#x97;¶é&#x97;´ï¼&#x8c;å&#x88;&#x99;ä¸ºä»&#x96;æ&#x83;³ä¸&#x8a;è¿&#x99;ä¸ªå­¦æ ¡</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <index id="400" parent="40" name="studentTime_id_UNIQUE">
+      <columns>studentTime_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="401" parent="40" name="PRIMARY">
+      <columns>studentTime_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="402" parent="40" name="studentTime_id_UNIQUE">
+      <columns>studentTime_id</columns>
+      <underlying-index>studentTime_id_UNIQUE</underlying-index>
+    </key>
+    <column id="403" parent="41" name="TABdescription_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="404" parent="41" name="TABdescription_zdName">
+      <comment>å­&#x97;æ®µå&#x90;&#x8d;å­&#x97;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="405" parent="41" name="TABdescription_description">
+      <comment>å­&#x97;æ®µæ&#x8f;&#x8f;è¿°</comment>
+      <data-type>text|0</data-type>
+    </column>
+    <index id="406" parent="41" name="TABdescription_UNIQUE">
+      <columns>TABdescription_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="407" parent="41" name="PRIMARY">
+      <columns>TABdescription_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="408" parent="41" name="TABdescription_UNIQUE">
+      <columns>TABdescription_id</columns>
+      <underlying-index>TABdescription_UNIQUE</underlying-index>
+    </key>
+    <column id="409" parent="42" name="town_name">
+      <comment>æ&#x95;°æ&#x8d;®åº&#x93;ä¸­æ&#x8a;&#x8a;å&#x9f;&#x8e;å¸&#x82;ç­&#x89;çº§ä¸&#x8b;è¾¹ç&#x9a;&#x84;å&#x8e;¿ï¼&#x8c;å&#x8c;ºï¼&#x8c;å¸&#x82;ï¼&#x88;eg:é&#x83;&#x91;å·&#x9e;å¸&#x82;æ&#x96;°å¯&#x86;å¸&#x82;ï¼&#x89;å½&#x92;ä¸ºä¸&#x80;ä¸ªè¡¨ townè¡¨ï¼&#x8c;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="410" parent="42" name="town_city">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="411" parent="42" name="town_encoding">
+      <comment>å&#x9f;&#x8e;å¸&#x82;ç¼&#x96;ç &#x81;</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="412" parent="42" name="town_city_idx">
+      <columns>town_city</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="413" parent="42" name="town_encoding_UNIQUE">
+      <columns>town_encoding</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="414" parent="42" name="PRIMARY">
+      <columns>town_encoding</columns>
+      <primary>1</primary>
+    </key>
+    <key id="415" parent="42" name="town_encoding_UNIQUE">
+      <columns>town_encoding</columns>
+      <underlying-index>town_encoding_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="416" parent="42" name="town_city">
+      <columns>town_city</columns>
+      <ref-key>~.city.city_encoding_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="417" parent="43" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="418" parent="43" name="user_saltPassword">
+      <comment>å&#x8a; ç&#x9b;&#x90;å&#x90;&#x8e;ç&#x9a;&#x84;å¯&#x86;ç &#x81;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="419" parent="43" name="user_role">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="420" parent="43" name="user_log">
+      <comment>ç&#x94;¨æ&#x88;·ç&#x9a;&#x84;æ&#x93;&#x8d;ä½&#x9c;æ&#x97;¥å¿&#x97;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="421" parent="43" name="user_salt">
+      <comment>å¯&#x86;ç &#x81;ç&#x9a;&#x84;ç&#x9b;&#x90;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="422" parent="43" name="user_loginToken">
+      <comment>ç&#x99;»é&#x99;&#x86;ä»¤ç&#x89;&#x8c;ï¼&#x9a;å·²ç»&#x8f;ç&#x99;»é&#x99;&#x86;è¿&#x87;ä¸&#x80;æ¬¡ä¹&#x8b;å&#x90;&#x8e;ï¼&#x8c;è¿&#x99;ä¸ªä»¤ç&#x89;&#x8c;ä¿&#x9d;å­&#x98;å&#x88;°æ&#x9c;¬å&#x9c;°ï¼&#x8c;(å&#x9c;¨æ&#x9c;¬å&#x9c;°æ³¨é&#x94;&#x80;ä¹&#x8b;å&#x89;&#x8d;)ç&#x84;¶å&#x90;&#x8e;ä¸&#x8b;æ¬¡ç&#x99;»é&#x99;&#x86;å°±ä¸&#x8d;ç&#x94;¨è¾&#x93;å&#x85;¥è´¦å&#x8f;·å&#x92;&#x8c;å¯&#x86;ç &#x81;å°±è&#x83;½ç&#x9b;´æ&#x8e;¥ç&#x99;»é&#x99;&#x86;äº&#x86;ï¼&#x88;ä¸&#x80;è&#x88;¬å&#x9c;¨æ&#x89;&#x8b;æ&#x9c;ºå®¢æ&#x88;·ç«¯ç&#x94;¨å&#x88;°ï¼&#x89;</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="423" parent="43" name="user_alterPasswordToken">
+      <comment>&quot;å¤§å¤&#x9a;æ&#x95;°ç½&#x91;ç«&#x99;å&#x90;&#x91;é&#x82;£äº&#x9b;å¿&#x98;è®°å¯&#x86;ç &#x81;ç&#x9a;&#x84;ç&#x94;¨æ&#x88;·å&#x8f;&#x91;é&#x80;&#x81;ç&#x94;µå­&#x90;é&#x82;®ä»¶æ&#x9d;¥è¿&#x9b;è¡&#x8c;èº«ä»½è®¤è¯&#x81;ã&#x80;&#x82;é¦&#x96;å&#x85;&#x88;ï¼&#x8c;é&#x9c;&#x80;è¦&#x81;é&#x9a;&#x8f;æ&#x9c;ºç&#x94;&#x9f;æ&#x88;&#x90;ä¸&#x80;ä¸ªä¸&#x80;æ¬¡æ&#x80;§ç&#x9a;&#x84;ä»¤ç&#x89;&#x8c;ï¼&#x8c;å®&#x83;ç&#x9b;´æ&#x8e;¥å&#x85;³è&#x81;&#x94;å&#x88;°ç&#x94;¨æ&#x88;·ç</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="424" parent="43" name="user_name">
+      <comment>ç&#x94;¨æ&#x88;·å&#x90;&#x8d;ï¼&#x8c;å­¦å&#x8f;·å&#x92;&#x8c;èº«ä»½è¯&#x81;ç­&#x89;å&#x8f;·ç &#x81;å¤ªå¤§ï¼&#x8c;ç&#x94;¨INTä¿&#x9d;å­&#x98;ä¸&#x8d;å¤ªå¥½</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="425" parent="43" name="user_id_UNIQUE">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="426" parent="43" name="user_log_idx">
+      <columns>user_log</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="427" parent="43" name="user_role_idx">
+      <columns>user_role</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="428" parent="43" name="PRIMARY">
+      <columns>user_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="429" parent="43" name="user_id_UNIQUE">
+      <columns>user_id</columns>
+      <underlying-index>user_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="430" parent="43" name="user_role">
+      <columns>user_role</columns>
+      <ref-key>~.role.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="431" parent="43" name="user_log">
+      <columns>user_log</columns>
+      <ref-key>~.log.log_id_UNIQUE</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="432" parent="44" name="wyyz_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="433" parent="44" name="wyyz_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="434" parent="44" name="wyyz_id_UNIQUE">
+      <columns>wyyz_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="435" parent="44" name="PRIMARY">
+      <columns>wyyz_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="436" parent="44" name="wyyz_id_UNIQUE">
+      <columns>wyyz_id</columns>
+      <underlying-index>wyyz_id_UNIQUE</underlying-index>
+    </key>
+    <column id="437" parent="45" name="xf_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="438" parent="45" name="xf_yhkh">
+      <comment>é&#x93;¶è¡&#x8c;å&#x8d;¡å&#x8f;·</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="439" parent="45" name="xf_submitTime">
+      <comment>å¦&#x82;æ&#x9e;&#x9c;æ&#x9f;¥è¯¢è¿&#x99;ä¸&#x80;å¹´æ²¡æ&#x9c;&#x89;æ²¡æ&#x9c;&#x89;æ&#x8f;&#x90;äº¤æ&#x97;¶é&#x97;´è¿&#x99;ä¸ªæ&#x95;°æ&#x8d;®ï¼&#x8c;å&#x88;&#x99;è¯&#x81;æ&#x98;&#x8e;è¿&#x99;ä¸ªå­¦ç&#x94;&#x9f;æ²¡æ&#x9c;&#x89;äº¤å­¦è´¹</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="440" parent="45" name="xf_amount">
+      <comment>æ&#x95;°ç&#x9b;®</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="441" parent="45" name="xf_id_UNIQUE">
+      <columns>xf_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="442" parent="45" name="PRIMARY">
+      <columns>xf_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="443" parent="45" name="xf_id_UNIQUE">
+      <columns>xf_id</columns>
+      <underlying-index>xf_id_UNIQUE</underlying-index>
+    </key>
+    <column id="444" parent="46" name="xq_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="445" parent="46" name="xq_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="446" parent="46" name="xq_id_UNIQUE">
+      <columns>xq_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="447" parent="46" name="PRIMARY">
+      <columns>xq_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="448" parent="46" name="xq_id_UNIQUE">
+      <columns>xq_id</columns>
+      <underlying-index>xq_id_UNIQUE</underlying-index>
+    </key>
+    <column id="449" parent="47" name="yx_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="450" parent="47" name="yx_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="451" parent="47" name="yx_xq">
+      <comment>æ ¡å&#x8c;ºï¼&#x8c;egï¼&#x9a;å&#x8c;&#x97;æ ¡å&#x8c;ºï¼&#x8c;å&#x8d;&#x97;æ ¡å&#x8c;ºï¼&#x8c;è¥¿æ ¡å&#x8c;ºå&#x95;¥ç&#x9a;&#x84;</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="452" parent="47" name="lqyx_id_UNIQUE">
+      <columns>yx_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="453" parent="47" name="lqyx_xq_idx">
+      <columns>yx_xq</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="454" parent="47" name="PRIMARY">
+      <columns>yx_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="455" parent="47" name="lqyx_id_UNIQUE">
+      <columns>yx_id</columns>
+      <underlying-index>lqyx_id_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="456" parent="47" name="lqyx_xq">
+      <columns>yx_xq</columns>
+      <ref-key>~.xq.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="457" parent="48" name="zzmm_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="458" parent="48" name="zzmm_name">
+      <comment>01 ä¸­å&#x85;±å&#x85;&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+02 ä¸­å&#x85;±é¢&#x84;å¤&#x87;å&#x85;&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+03 å&#x85;±é&#x9d;&#x92;å&#x9b;¢å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+04 æ°&#x91;é&#x9d;©å&#x85;&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+05 æ°&#x91;ç&#x9b;&#x9f;ç&#x9b;&#x9f;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+06 æ°&#x91;å»ºä¼&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+07 æ°&#x91;è¿&#x9b;ä¼&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+08 å&#x86;&#x9c;å·¥å&#x85;&#x9a;å&#x85;&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+09 è&#x87;´å&#x85;¬å&#x85;&#x9a;å&#x85;&#x9a;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+10 ä¹&#x9d;ä¸&#x89;å­¦ç¤¾ç¤¾å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+11 å&#x8f;°ç&#x9b;&#x9f;ç&#x9b;&#x9f;å&#x91;&#x98; ã&#x80;&#x80;ã&#x80;&#x80;
+12 æ&#x97; å&#x85;&#x9a;æ´¾æ°&#x91;ä¸»äººå£« ã&#x80;&#x80;ã&#x80;&#x80;
+13 ç¾¤ä¼&#x97;ï¼&#x88;ç&#x8e;°ç§°æ&#x99;®é&#x80;&#x9a;å&#x85;¬æ°&#x91;ï¼&#x89;</comment>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <index id="459" parent="48" name="zzmm_id_UNIQUE">
+      <columns>zzmm_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="460" parent="48" name="PRIMARY">
+      <columns>zzmm_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="461" parent="48" name="zzmm_id_UNIQUE">
+      <columns>zzmm_id</columns>
+      <underlying-index>zzmm_id_UNIQUE</underlying-index>
+    </key>
+  </database-model>
+</dataSource>

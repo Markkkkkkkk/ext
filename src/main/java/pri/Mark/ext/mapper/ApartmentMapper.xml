@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.ApartmentMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Apartment" >
+    <id column="apartment_id" property="apartmentId" jdbcType="INTEGER" />
+    <result column="apartment_yx" property="apartmentYx" jdbcType="INTEGER" />
+    <result column="apartment_name" property="apartmentName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    apartment_id, apartment_yx, apartment_name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.ApartmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from apartment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from apartment
+    where apartment_id = #{apartmentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from apartment
+    where apartment_id = #{apartmentId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.ApartmentExample" >
+    delete from apartment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Apartment" >
+    insert into apartment (apartment_id, apartment_yx, apartment_name
+      )
+    values (#{apartmentId,jdbcType=INTEGER}, #{apartmentYx,jdbcType=INTEGER}, #{apartmentName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Apartment" >
+    insert into apartment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="apartmentId != null" >
+        apartment_id,
+      </if>
+      <if test="apartmentYx != null" >
+        apartment_yx,
+      </if>
+      <if test="apartmentName != null" >
+        apartment_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="apartmentId != null" >
+        #{apartmentId,jdbcType=INTEGER},
+      </if>
+      <if test="apartmentYx != null" >
+        #{apartmentYx,jdbcType=INTEGER},
+      </if>
+      <if test="apartmentName != null" >
+        #{apartmentName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.ApartmentExample" resultType="java.lang.Integer" >
+    select count(*) from apartment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update apartment
+    <set >
+      <if test="record.apartmentId != null" >
+        apartment_id = #{record.apartmentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.apartmentYx != null" >
+        apartment_yx = #{record.apartmentYx,jdbcType=INTEGER},
+      </if>
+      <if test="record.apartmentName != null" >
+        apartment_name = #{record.apartmentName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update apartment
+    set apartment_id = #{record.apartmentId,jdbcType=INTEGER},
+      apartment_yx = #{record.apartmentYx,jdbcType=INTEGER},
+      apartment_name = #{record.apartmentName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Apartment" >
+    update apartment
+    <set >
+      <if test="apartmentYx != null" >
+        apartment_yx = #{apartmentYx,jdbcType=INTEGER},
+      </if>
+      <if test="apartmentName != null" >
+        apartment_name = #{apartmentName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where apartment_id = #{apartmentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Apartment" >
+    update apartment
+    set apartment_yx = #{apartmentYx,jdbcType=INTEGER},
+      apartment_name = #{apartmentName,jdbcType=VARCHAR}
+    where apartment_id = #{apartmentId,jdbcType=INTEGER}
+  </update>
+</mapper>

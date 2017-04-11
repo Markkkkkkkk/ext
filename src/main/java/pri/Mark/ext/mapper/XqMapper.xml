@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.XqMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Xq" >
+    <id column="xq_id" property="xqId" jdbcType="INTEGER" />
+    <result column="xq_name" property="xqName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    xq_id, xq_name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.XqExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xq
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from xq
+    where xq_id = #{xqId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from xq
+    where xq_id = #{xqId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.XqExample" >
+    delete from xq
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Xq" >
+    insert into xq (xq_id, xq_name)
+    values (#{xqId,jdbcType=INTEGER}, #{xqName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Xq" >
+    insert into xq
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xqId != null" >
+        xq_id,
+      </if>
+      <if test="xqName != null" >
+        xq_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xqId != null" >
+        #{xqId,jdbcType=INTEGER},
+      </if>
+      <if test="xqName != null" >
+        #{xqName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.XqExample" resultType="java.lang.Integer" >
+    select count(*) from xq
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update xq
+    <set >
+      <if test="record.xqId != null" >
+        xq_id = #{record.xqId,jdbcType=INTEGER},
+      </if>
+      <if test="record.xqName != null" >
+        xq_name = #{record.xqName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update xq
+    set xq_id = #{record.xqId,jdbcType=INTEGER},
+      xq_name = #{record.xqName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Xq" >
+    update xq
+    <set >
+      <if test="xqName != null" >
+        xq_name = #{xqName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where xq_id = #{xqId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Xq" >
+    update xq
+    set xq_name = #{xqName,jdbcType=VARCHAR}
+    where xq_id = #{xqId,jdbcType=INTEGER}
+  </update>
+</mapper>

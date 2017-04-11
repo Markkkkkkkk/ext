@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.IdentitytypeMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Identitytype" >
+    <id column="identityType_id" property="identitytypeId" jdbcType="INTEGER" />
+    <result column="identityTyp_type" property="identitytypType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    identityType_id, identityTyp_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.IdentitytypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from identitytype
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from identitytype
+    where identityType_id = #{identitytypeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from identitytype
+    where identityType_id = #{identitytypeId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.IdentitytypeExample" >
+    delete from identitytype
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Identitytype" >
+    insert into identitytype (identityType_id, identityTyp_type)
+    values (#{identitytypeId,jdbcType=INTEGER}, #{identitytypType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Identitytype" >
+    insert into identitytype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="identitytypeId != null" >
+        identityType_id,
+      </if>
+      <if test="identitytypType != null" >
+        identityTyp_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="identitytypeId != null" >
+        #{identitytypeId,jdbcType=INTEGER},
+      </if>
+      <if test="identitytypType != null" >
+        #{identitytypType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.IdentitytypeExample" resultType="java.lang.Integer" >
+    select count(*) from identitytype
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update identitytype
+    <set >
+      <if test="record.identitytypeId != null" >
+        identityType_id = #{record.identitytypeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.identitytypType != null" >
+        identityTyp_type = #{record.identitytypType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update identitytype
+    set identityType_id = #{record.identitytypeId,jdbcType=INTEGER},
+      identityTyp_type = #{record.identitytypType,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Identitytype" >
+    update identitytype
+    <set >
+      <if test="identitytypType != null" >
+        identityTyp_type = #{identitytypType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where identityType_id = #{identitytypeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Identitytype" >
+    update identitytype
+    set identityTyp_type = #{identitytypType,jdbcType=VARCHAR}
+    where identityType_id = #{identitytypeId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.IdentityMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Identity" >
+    <id column="identity_id" property="identityId" jdbcType="VARCHAR" />
+    <result column="identity_number" property="identityNumber" jdbcType="VARCHAR" />
+    <result column="identity_type" property="identityType" jdbcType="INTEGER" />
+    <result column="identity_applyTime" property="identityApplytime" jdbcType="DATE" />
+    <result column="identity_endTime" property="identityEndtime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    identity_id, identity_number, identity_type, identity_applyTime, identity_endTime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.IdentityExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from identity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from identity
+    where identity_id = #{identityId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from identity
+    where identity_id = #{identityId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.IdentityExample" >
+    delete from identity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Identity" >
+    insert into identity (identity_id, identity_number, identity_type, 
+      identity_applyTime, identity_endTime)
+    values (#{identityId,jdbcType=VARCHAR}, #{identityNumber,jdbcType=VARCHAR}, #{identityType,jdbcType=INTEGER}, 
+      #{identityApplytime,jdbcType=DATE}, #{identityEndtime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Identity" >
+    insert into identity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="identityId != null" >
+        identity_id,
+      </if>
+      <if test="identityNumber != null" >
+        identity_number,
+      </if>
+      <if test="identityType != null" >
+        identity_type,
+      </if>
+      <if test="identityApplytime != null" >
+        identity_applyTime,
+      </if>
+      <if test="identityEndtime != null" >
+        identity_endTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="identityId != null" >
+        #{identityId,jdbcType=VARCHAR},
+      </if>
+      <if test="identityNumber != null" >
+        #{identityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identityType != null" >
+        #{identityType,jdbcType=INTEGER},
+      </if>
+      <if test="identityApplytime != null" >
+        #{identityApplytime,jdbcType=DATE},
+      </if>
+      <if test="identityEndtime != null" >
+        #{identityEndtime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.IdentityExample" resultType="java.lang.Integer" >
+    select count(*) from identity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update identity
+    <set >
+      <if test="record.identityId != null" >
+        identity_id = #{record.identityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityNumber != null" >
+        identity_number = #{record.identityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityType != null" >
+        identity_type = #{record.identityType,jdbcType=INTEGER},
+      </if>
+      <if test="record.identityApplytime != null" >
+        identity_applyTime = #{record.identityApplytime,jdbcType=DATE},
+      </if>
+      <if test="record.identityEndtime != null" >
+        identity_endTime = #{record.identityEndtime,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update identity
+    set identity_id = #{record.identityId,jdbcType=VARCHAR},
+      identity_number = #{record.identityNumber,jdbcType=VARCHAR},
+      identity_type = #{record.identityType,jdbcType=INTEGER},
+      identity_applyTime = #{record.identityApplytime,jdbcType=DATE},
+      identity_endTime = #{record.identityEndtime,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Identity" >
+    update identity
+    <set >
+      <if test="identityNumber != null" >
+        identity_number = #{identityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identityType != null" >
+        identity_type = #{identityType,jdbcType=INTEGER},
+      </if>
+      <if test="identityApplytime != null" >
+        identity_applyTime = #{identityApplytime,jdbcType=DATE},
+      </if>
+      <if test="identityEndtime != null" >
+        identity_endTime = #{identityEndtime,jdbcType=DATE},
+      </if>
+    </set>
+    where identity_id = #{identityId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Identity" >
+    update identity
+    set identity_number = #{identityNumber,jdbcType=VARCHAR},
+      identity_type = #{identityType,jdbcType=INTEGER},
+      identity_applyTime = #{identityApplytime,jdbcType=DATE},
+      identity_endTime = #{identityEndtime,jdbcType=DATE}
+    where identity_id = #{identityId,jdbcType=VARCHAR}
+  </update>
+</mapper>

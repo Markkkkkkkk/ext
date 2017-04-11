@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!--mysql 连接数据库jar 这里选择自己本地位置-->
+	<classPathEntry location="C:\Users\Mark\.m2\repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://localhost:3306/extdb" userId="root"
+						password="">
+		</jdbcConnection>
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+           NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="pri.Mark.ext.model"
+							targetProject="src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- targetProject:mapper映射文件生成的位置
+           如果maven工程只是单独的一个工程，targetProject="src/main/java"
+           若果maven工程是分模块的工程，targetProject="所属模块的名称"，例如：
+           targetProject="ecps-manager-mapping"，下同-->
+		<sqlMapGenerator targetPackage="pri.Mark.ext.mapper"
+						 targetProject="src/main/java/">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+							 targetPackage="pri.Mark.ext.dao"
+							 targetProject="src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+		<table schema="" tableName="address"></table>
+		<table schema="" tableName="apartment"></table>
+		<table schema="" tableName="bloodtype"></table>
+		<table schema="" tableName="city"></table>
+		<table schema="" tableName="class"></table>
+		<table schema="" tableName="country"></table>
+		<table schema="" tableName="dbdescription"></table>
+		<table schema="" tableName="description"></table>
+		<table schema="" tableName="dormitory"></table>
+		<table schema="" tableName="gkxx"></table>
+		<table schema="" tableName="healthstatus"></table>
+		<table schema="" tableName="highschool"></table>
+		<table schema="" tableName="hj"></table>
+		<table schema="" tableName="idcard"></table>
+		<table schema="" tableName="identity"></table>
+		<table schema="" tableName="identitytype"></table>
+		<table schema="" tableName="kslb"></table>
+		<table schema="" tableName="loan"></table>
+		<table schema="" tableName="loantype"></table>
+		<table schema="" tableName="log"></table>
+		<table schema="" tableName="major"></table>
+		<table schema="" tableName="nation"></table>
+		<table schema="" tableName="picture"></table>
+		<table schema="" tableName="province"></table>
+		<table schema="" tableName="relative"></table>
+		<table schema="" tableName="religion"></table>
+		<table schema="" tableName="role"></table>
+		<table schema="" tableName="shuoshuo"></table>
+		<table schema="" tableName="shuoshuocomment"></table>
+		<table schema="" tableName="shuoshuolike"></table>
+		<table schema="" tableName="shuoshuopicture"></table>
+		<table schema="" tableName="student"></table>
+		<table schema="" tableName="studentdiadic"></table>
+		<table schema="" tableName="studentname"></table>
+		<table schema="" tableName="studenttime"></table>
+		<table schema="" tableName="tabdescription"></table>
+		<table schema="" tableName="town"></table>
+		<table schema="" tableName="user"></table>
+		<table schema="" tableName="wyyz"></table>
+		<table schema="" tableName="xf"></table>
+		<table schema="" tableName="xq"></table>
+		<table schema="" tableName="yx"></table>
+		<table schema="" tableName="zzmm"></table>
+
+
+
+	</context>
+</generatorConfiguration>

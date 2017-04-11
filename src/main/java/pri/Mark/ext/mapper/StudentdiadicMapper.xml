@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.StudentdiadicMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Studentdiadic" >
+    <id column="studentDiadic_id" property="studentdiadicId" jdbcType="INTEGER" />
+    <result column="studentDiadic_onlyChild" property="studentdiadicOnlychild" jdbcType="INTEGER" />
+    <result column="studentDiadic_preprimary" property="studentdiadicPreprimary" jdbcType="INTEGER" />
+    <result column="studentDiadic_leftBehindChildren" property="studentdiadicLeftbehindchildren" jdbcType="INTEGER" />
+    <result column="studentDiadic_jcwgrysqzn" property="studentdiadicJcwgrysqzn" jdbcType="INTEGER" />
+    <result column="studentDiadic_orphan" property="studentdiadicOrphan" jdbcType="INTEGER" />
+    <result column="studentDiadic_lshyfzn" property="studentdiadicLshyfzn" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    studentDiadic_id, studentDiadic_onlyChild, studentDiadic_preprimary, studentDiadic_leftBehindChildren, 
+    studentDiadic_jcwgrysqzn, studentDiadic_orphan, studentDiadic_lshyfzn
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.StudentdiadicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from studentdiadic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from studentdiadic
+    where studentDiadic_id = #{studentdiadicId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from studentdiadic
+    where studentDiadic_id = #{studentdiadicId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.StudentdiadicExample" >
+    delete from studentdiadic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Studentdiadic" >
+    insert into studentdiadic (studentDiadic_id, studentDiadic_onlyChild, 
+      studentDiadic_preprimary, studentDiadic_leftBehindChildren, 
+      studentDiadic_jcwgrysqzn, studentDiadic_orphan, 
+      studentDiadic_lshyfzn)
+    values (#{studentdiadicId,jdbcType=INTEGER}, #{studentdiadicOnlychild,jdbcType=INTEGER}, 
+      #{studentdiadicPreprimary,jdbcType=INTEGER}, #{studentdiadicLeftbehindchildren,jdbcType=INTEGER}, 
+      #{studentdiadicJcwgrysqzn,jdbcType=INTEGER}, #{studentdiadicOrphan,jdbcType=INTEGER}, 
+      #{studentdiadicLshyfzn,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Studentdiadic" >
+    insert into studentdiadic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="studentdiadicId != null" >
+        studentDiadic_id,
+      </if>
+      <if test="studentdiadicOnlychild != null" >
+        studentDiadic_onlyChild,
+      </if>
+      <if test="studentdiadicPreprimary != null" >
+        studentDiadic_preprimary,
+      </if>
+      <if test="studentdiadicLeftbehindchildren != null" >
+        studentDiadic_leftBehindChildren,
+      </if>
+      <if test="studentdiadicJcwgrysqzn != null" >
+        studentDiadic_jcwgrysqzn,
+      </if>
+      <if test="studentdiadicOrphan != null" >
+        studentDiadic_orphan,
+      </if>
+      <if test="studentdiadicLshyfzn != null" >
+        studentDiadic_lshyfzn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="studentdiadicId != null" >
+        #{studentdiadicId,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicOnlychild != null" >
+        #{studentdiadicOnlychild,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicPreprimary != null" >
+        #{studentdiadicPreprimary,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicLeftbehindchildren != null" >
+        #{studentdiadicLeftbehindchildren,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicJcwgrysqzn != null" >
+        #{studentdiadicJcwgrysqzn,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicOrphan != null" >
+        #{studentdiadicOrphan,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicLshyfzn != null" >
+        #{studentdiadicLshyfzn,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.StudentdiadicExample" resultType="java.lang.Integer" >
+    select count(*) from studentdiadic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update studentdiadic
+    <set >
+      <if test="record.studentdiadicId != null" >
+        studentDiadic_id = #{record.studentdiadicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.studentdiadicOnlychild != null" >
+        studentDiadic_onlyChild = #{record.studentdiadicOnlychild,jdbcType=INTEGER},
+      </if>
+      <if test="record.studentdiadicPreprimary != null" >
+        studentDiadic_preprimary = #{record.studentdiadicPreprimary,jdbcType=INTEGER},
+      </if>
+      <if test="record.studentdiadicLeftbehindchildren != null" >
+        studentDiadic_leftBehindChildren = #{record.studentdiadicLeftbehindchildren,jdbcType=INTEGER},
+      </if>
+      <if test="record.studentdiadicJcwgrysqzn != null" >
+        studentDiadic_jcwgrysqzn = #{record.studentdiadicJcwgrysqzn,jdbcType=INTEGER},
+      </if>
+      <if test="record.studentdiadicOrphan != null" >
+        studentDiadic_orphan = #{record.studentdiadicOrphan,jdbcType=INTEGER},
+      </if>
+      <if test="record.studentdiadicLshyfzn != null" >
+        studentDiadic_lshyfzn = #{record.studentdiadicLshyfzn,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update studentdiadic
+    set studentDiadic_id = #{record.studentdiadicId,jdbcType=INTEGER},
+      studentDiadic_onlyChild = #{record.studentdiadicOnlychild,jdbcType=INTEGER},
+      studentDiadic_preprimary = #{record.studentdiadicPreprimary,jdbcType=INTEGER},
+      studentDiadic_leftBehindChildren = #{record.studentdiadicLeftbehindchildren,jdbcType=INTEGER},
+      studentDiadic_jcwgrysqzn = #{record.studentdiadicJcwgrysqzn,jdbcType=INTEGER},
+      studentDiadic_orphan = #{record.studentdiadicOrphan,jdbcType=INTEGER},
+      studentDiadic_lshyfzn = #{record.studentdiadicLshyfzn,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Studentdiadic" >
+    update studentdiadic
+    <set >
+      <if test="studentdiadicOnlychild != null" >
+        studentDiadic_onlyChild = #{studentdiadicOnlychild,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicPreprimary != null" >
+        studentDiadic_preprimary = #{studentdiadicPreprimary,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicLeftbehindchildren != null" >
+        studentDiadic_leftBehindChildren = #{studentdiadicLeftbehindchildren,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicJcwgrysqzn != null" >
+        studentDiadic_jcwgrysqzn = #{studentdiadicJcwgrysqzn,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicOrphan != null" >
+        studentDiadic_orphan = #{studentdiadicOrphan,jdbcType=INTEGER},
+      </if>
+      <if test="studentdiadicLshyfzn != null" >
+        studentDiadic_lshyfzn = #{studentdiadicLshyfzn,jdbcType=INTEGER},
+      </if>
+    </set>
+    where studentDiadic_id = #{studentdiadicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Studentdiadic" >
+    update studentdiadic
+    set studentDiadic_onlyChild = #{studentdiadicOnlychild,jdbcType=INTEGER},
+      studentDiadic_preprimary = #{studentdiadicPreprimary,jdbcType=INTEGER},
+      studentDiadic_leftBehindChildren = #{studentdiadicLeftbehindchildren,jdbcType=INTEGER},
+      studentDiadic_jcwgrysqzn = #{studentdiadicJcwgrysqzn,jdbcType=INTEGER},
+      studentDiadic_orphan = #{studentdiadicOrphan,jdbcType=INTEGER},
+      studentDiadic_lshyfzn = #{studentdiadicLshyfzn,jdbcType=INTEGER}
+    where studentDiadic_id = #{studentdiadicId,jdbcType=INTEGER}
+  </update>
+</mapper>

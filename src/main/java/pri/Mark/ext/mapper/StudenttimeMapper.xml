@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.StudenttimeMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Studenttime" >
+    <id column="studentTime_id" property="studenttimeId" jdbcType="INTEGER" />
+    <result column="studentTime_birthday" property="studenttimeBirthday" jdbcType="DATE" />
+    <result column="studentTime_rxsj" property="studenttimeRxsj" jdbcType="VARCHAR" />
+    <result column="studentTime_register" property="studenttimeRegister" jdbcType="TIMESTAMP" />
+    <result column="studentTime_expectRegister" property="studenttimeExpectregister" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    studentTime_id, studentTime_birthday, studentTime_rxsj, studentTime_register, studentTime_expectRegister
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.StudenttimeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from studenttime
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from studenttime
+    where studentTime_id = #{studenttimeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from studenttime
+    where studentTime_id = #{studenttimeId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.StudenttimeExample" >
+    delete from studenttime
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Studenttime" >
+    insert into studenttime (studentTime_id, studentTime_birthday, 
+      studentTime_rxsj, studentTime_register, 
+      studentTime_expectRegister)
+    values (#{studenttimeId,jdbcType=INTEGER}, #{studenttimeBirthday,jdbcType=DATE}, 
+      #{studenttimeRxsj,jdbcType=VARCHAR}, #{studenttimeRegister,jdbcType=TIMESTAMP}, 
+      #{studenttimeExpectregister,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Studenttime" >
+    insert into studenttime
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="studenttimeId != null" >
+        studentTime_id,
+      </if>
+      <if test="studenttimeBirthday != null" >
+        studentTime_birthday,
+      </if>
+      <if test="studenttimeRxsj != null" >
+        studentTime_rxsj,
+      </if>
+      <if test="studenttimeRegister != null" >
+        studentTime_register,
+      </if>
+      <if test="studenttimeExpectregister != null" >
+        studentTime_expectRegister,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="studenttimeId != null" >
+        #{studenttimeId,jdbcType=INTEGER},
+      </if>
+      <if test="studenttimeBirthday != null" >
+        #{studenttimeBirthday,jdbcType=DATE},
+      </if>
+      <if test="studenttimeRxsj != null" >
+        #{studenttimeRxsj,jdbcType=VARCHAR},
+      </if>
+      <if test="studenttimeRegister != null" >
+        #{studenttimeRegister,jdbcType=TIMESTAMP},
+      </if>
+      <if test="studenttimeExpectregister != null" >
+        #{studenttimeExpectregister,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.StudenttimeExample" resultType="java.lang.Integer" >
+    select count(*) from studenttime
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update studenttime
+    <set >
+      <if test="record.studenttimeId != null" >
+        studentTime_id = #{record.studenttimeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.studenttimeBirthday != null" >
+        studentTime_birthday = #{record.studenttimeBirthday,jdbcType=DATE},
+      </if>
+      <if test="record.studenttimeRxsj != null" >
+        studentTime_rxsj = #{record.studenttimeRxsj,jdbcType=VARCHAR},
+      </if>
+      <if test="record.studenttimeRegister != null" >
+        studentTime_register = #{record.studenttimeRegister,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.studenttimeExpectregister != null" >
+        studentTime_expectRegister = #{record.studenttimeExpectregister,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update studenttime
+    set studentTime_id = #{record.studenttimeId,jdbcType=INTEGER},
+      studentTime_birthday = #{record.studenttimeBirthday,jdbcType=DATE},
+      studentTime_rxsj = #{record.studenttimeRxsj,jdbcType=VARCHAR},
+      studentTime_register = #{record.studenttimeRegister,jdbcType=TIMESTAMP},
+      studentTime_expectRegister = #{record.studenttimeExpectregister,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Studenttime" >
+    update studenttime
+    <set >
+      <if test="studenttimeBirthday != null" >
+        studentTime_birthday = #{studenttimeBirthday,jdbcType=DATE},
+      </if>
+      <if test="studenttimeRxsj != null" >
+        studentTime_rxsj = #{studenttimeRxsj,jdbcType=VARCHAR},
+      </if>
+      <if test="studenttimeRegister != null" >
+        studentTime_register = #{studenttimeRegister,jdbcType=TIMESTAMP},
+      </if>
+      <if test="studenttimeExpectregister != null" >
+        studentTime_expectRegister = #{studenttimeExpectregister,jdbcType=DATE},
+      </if>
+    </set>
+    where studentTime_id = #{studenttimeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Studenttime" >
+    update studenttime
+    set studentTime_birthday = #{studenttimeBirthday,jdbcType=DATE},
+      studentTime_rxsj = #{studenttimeRxsj,jdbcType=VARCHAR},
+      studentTime_register = #{studenttimeRegister,jdbcType=TIMESTAMP},
+      studentTime_expectRegister = #{studenttimeExpectregister,jdbcType=DATE}
+    where studentTime_id = #{studenttimeId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.ShuoshuopictureMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Shuoshuopicture" >
+    <id column="shuoshuoPicture_id" property="shuoshuopictureId" jdbcType="INTEGER" />
+    <result column="shuoshuoPicture_name" property="shuoshuopictureName" jdbcType="VARCHAR" />
+    <result column="shuoshuoPicture_shuoshuo" property="shuoshuopictureShuoshuo" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="pri.Mark.ext.model.Shuoshuopicture" extends="BaseResultMap" >
+    <result column="shuoshuoPicture_path" property="shuoshuopicturePath" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    shuoshuoPicture_id, shuoshuoPicture_name, shuoshuoPicture_shuoshuo
+  </sql>
+  <sql id="Blob_Column_List" >
+    shuoshuoPicture_path
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="pri.Mark.ext.model.ShuoshuopictureExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from shuoshuopicture
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.ShuoshuopictureExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from shuoshuopicture
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from shuoshuopicture
+    where shuoshuoPicture_id = #{shuoshuopictureId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from shuoshuopicture
+    where shuoshuoPicture_id = #{shuoshuopictureId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.ShuoshuopictureExample" >
+    delete from shuoshuopicture
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Shuoshuopicture" >
+    insert into shuoshuopicture (shuoshuoPicture_id, shuoshuoPicture_name, 
+      shuoshuoPicture_shuoshuo, shuoshuoPicture_path
+      )
+    values (#{shuoshuopictureId,jdbcType=INTEGER}, #{shuoshuopictureName,jdbcType=VARCHAR}, 
+      #{shuoshuopictureShuoshuo,jdbcType=INTEGER}, #{shuoshuopicturePath,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Shuoshuopicture" >
+    insert into shuoshuopicture
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="shuoshuopictureId != null" >
+        shuoshuoPicture_id,
+      </if>
+      <if test="shuoshuopictureName != null" >
+        shuoshuoPicture_name,
+      </if>
+      <if test="shuoshuopictureShuoshuo != null" >
+        shuoshuoPicture_shuoshuo,
+      </if>
+      <if test="shuoshuopicturePath != null" >
+        shuoshuoPicture_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="shuoshuopictureId != null" >
+        #{shuoshuopictureId,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuopictureName != null" >
+        #{shuoshuopictureName,jdbcType=VARCHAR},
+      </if>
+      <if test="shuoshuopictureShuoshuo != null" >
+        #{shuoshuopictureShuoshuo,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuopicturePath != null" >
+        #{shuoshuopicturePath,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.ShuoshuopictureExample" resultType="java.lang.Integer" >
+    select count(*) from shuoshuopicture
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update shuoshuopicture
+    <set >
+      <if test="record.shuoshuopictureId != null" >
+        shuoshuoPicture_id = #{record.shuoshuopictureId,jdbcType=INTEGER},
+      </if>
+      <if test="record.shuoshuopictureName != null" >
+        shuoshuoPicture_name = #{record.shuoshuopictureName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shuoshuopictureShuoshuo != null" >
+        shuoshuoPicture_shuoshuo = #{record.shuoshuopictureShuoshuo,jdbcType=INTEGER},
+      </if>
+      <if test="record.shuoshuopicturePath != null" >
+        shuoshuoPicture_path = #{record.shuoshuopicturePath,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update shuoshuopicture
+    set shuoshuoPicture_id = #{record.shuoshuopictureId,jdbcType=INTEGER},
+      shuoshuoPicture_name = #{record.shuoshuopictureName,jdbcType=VARCHAR},
+      shuoshuoPicture_shuoshuo = #{record.shuoshuopictureShuoshuo,jdbcType=INTEGER},
+      shuoshuoPicture_path = #{record.shuoshuopicturePath,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update shuoshuopicture
+    set shuoshuoPicture_id = #{record.shuoshuopictureId,jdbcType=INTEGER},
+      shuoshuoPicture_name = #{record.shuoshuopictureName,jdbcType=VARCHAR},
+      shuoshuoPicture_shuoshuo = #{record.shuoshuopictureShuoshuo,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Shuoshuopicture" >
+    update shuoshuopicture
+    <set >
+      <if test="shuoshuopictureName != null" >
+        shuoshuoPicture_name = #{shuoshuopictureName,jdbcType=VARCHAR},
+      </if>
+      <if test="shuoshuopictureShuoshuo != null" >
+        shuoshuoPicture_shuoshuo = #{shuoshuopictureShuoshuo,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuopicturePath != null" >
+        shuoshuoPicture_path = #{shuoshuopicturePath,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where shuoshuoPicture_id = #{shuoshuopictureId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pri.Mark.ext.model.Shuoshuopicture" >
+    update shuoshuopicture
+    set shuoshuoPicture_name = #{shuoshuopictureName,jdbcType=VARCHAR},
+      shuoshuoPicture_shuoshuo = #{shuoshuopictureShuoshuo,jdbcType=INTEGER},
+      shuoshuoPicture_path = #{shuoshuopicturePath,jdbcType=LONGVARCHAR}
+    where shuoshuoPicture_id = #{shuoshuopictureId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Shuoshuopicture" >
+    update shuoshuopicture
+    set shuoshuoPicture_name = #{shuoshuopictureName,jdbcType=VARCHAR},
+      shuoshuoPicture_shuoshuo = #{shuoshuopictureShuoshuo,jdbcType=INTEGER}
+    where shuoshuoPicture_id = #{shuoshuopictureId,jdbcType=INTEGER}
+  </update>
+</mapper>

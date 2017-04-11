@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.HealthstatusMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Healthstatus" >
+    <id column="healthStatus_id" property="healthstatusId" jdbcType="INTEGER" />
+    <result column="healthStatus_type" property="healthstatusType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    healthStatus_id, healthStatus_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.HealthstatusExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from healthstatus
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from healthstatus
+    where healthStatus_id = #{healthstatusId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from healthstatus
+    where healthStatus_id = #{healthstatusId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.HealthstatusExample" >
+    delete from healthstatus
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Healthstatus" >
+    insert into healthstatus (healthStatus_id, healthStatus_type)
+    values (#{healthstatusId,jdbcType=INTEGER}, #{healthstatusType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Healthstatus" >
+    insert into healthstatus
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="healthstatusId != null" >
+        healthStatus_id,
+      </if>
+      <if test="healthstatusType != null" >
+        healthStatus_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="healthstatusId != null" >
+        #{healthstatusId,jdbcType=INTEGER},
+      </if>
+      <if test="healthstatusType != null" >
+        #{healthstatusType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.HealthstatusExample" resultType="java.lang.Integer" >
+    select count(*) from healthstatus
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update healthstatus
+    <set >
+      <if test="record.healthstatusId != null" >
+        healthStatus_id = #{record.healthstatusId,jdbcType=INTEGER},
+      </if>
+      <if test="record.healthstatusType != null" >
+        healthStatus_type = #{record.healthstatusType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update healthstatus
+    set healthStatus_id = #{record.healthstatusId,jdbcType=INTEGER},
+      healthStatus_type = #{record.healthstatusType,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Healthstatus" >
+    update healthstatus
+    <set >
+      <if test="healthstatusType != null" >
+        healthStatus_type = #{healthstatusType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where healthStatus_id = #{healthstatusId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Healthstatus" >
+    update healthstatus
+    set healthStatus_type = #{healthstatusType,jdbcType=VARCHAR}
+    where healthStatus_id = #{healthstatusId,jdbcType=INTEGER}
+  </update>
+</mapper>

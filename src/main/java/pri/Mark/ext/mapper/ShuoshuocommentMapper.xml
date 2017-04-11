@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.ShuoshuocommentMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Shuoshuocomment" >
+    <id column="shuoshuoComment_id" property="shuoshuocommentId" jdbcType="INTEGER" />
+    <result column="shuoshuoComment_releaseTime" property="shuoshuocommentReleasetime" jdbcType="TIMESTAMP" />
+    <result column="shuoshuoComment_promulgator" property="shuoshuocommentPromulgator" jdbcType="INTEGER" />
+    <result column="shuoshuoCommentcol_previousComment" property="shuoshuocommentcolPreviouscomment" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="pri.Mark.ext.model.Shuoshuocomment" extends="BaseResultMap" >
+    <result column="shuoshuoComment_content" property="shuoshuocommentContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    shuoshuoComment_id, shuoshuoComment_releaseTime, shuoshuoComment_promulgator, shuoshuoCommentcol_previousComment
+  </sql>
+  <sql id="Blob_Column_List" >
+    shuoshuoComment_content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="pri.Mark.ext.model.ShuoshuocommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from shuoshuocomment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.ShuoshuocommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from shuoshuocomment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from shuoshuocomment
+    where shuoshuoComment_id = #{shuoshuocommentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from shuoshuocomment
+    where shuoshuoComment_id = #{shuoshuocommentId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.ShuoshuocommentExample" >
+    delete from shuoshuocomment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Shuoshuocomment" >
+    insert into shuoshuocomment (shuoshuoComment_id, shuoshuoComment_releaseTime, 
+      shuoshuoComment_promulgator, shuoshuoCommentcol_previousComment, 
+      shuoshuoComment_content)
+    values (#{shuoshuocommentId,jdbcType=INTEGER}, #{shuoshuocommentReleasetime,jdbcType=TIMESTAMP}, 
+      #{shuoshuocommentPromulgator,jdbcType=INTEGER}, #{shuoshuocommentcolPreviouscomment,jdbcType=INTEGER}, 
+      #{shuoshuocommentContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Shuoshuocomment" >
+    insert into shuoshuocomment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="shuoshuocommentId != null" >
+        shuoshuoComment_id,
+      </if>
+      <if test="shuoshuocommentReleasetime != null" >
+        shuoshuoComment_releaseTime,
+      </if>
+      <if test="shuoshuocommentPromulgator != null" >
+        shuoshuoComment_promulgator,
+      </if>
+      <if test="shuoshuocommentcolPreviouscomment != null" >
+        shuoshuoCommentcol_previousComment,
+      </if>
+      <if test="shuoshuocommentContent != null" >
+        shuoshuoComment_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="shuoshuocommentId != null" >
+        #{shuoshuocommentId,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuocommentReleasetime != null" >
+        #{shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shuoshuocommentPromulgator != null" >
+        #{shuoshuocommentPromulgator,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuocommentcolPreviouscomment != null" >
+        #{shuoshuocommentcolPreviouscomment,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuocommentContent != null" >
+        #{shuoshuocommentContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.ShuoshuocommentExample" resultType="java.lang.Integer" >
+    select count(*) from shuoshuocomment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update shuoshuocomment
+    <set >
+      <if test="record.shuoshuocommentId != null" >
+        shuoshuoComment_id = #{record.shuoshuocommentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.shuoshuocommentReleasetime != null" >
+        shuoshuoComment_releaseTime = #{record.shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.shuoshuocommentPromulgator != null" >
+        shuoshuoComment_promulgator = #{record.shuoshuocommentPromulgator,jdbcType=INTEGER},
+      </if>
+      <if test="record.shuoshuocommentcolPreviouscomment != null" >
+        shuoshuoCommentcol_previousComment = #{record.shuoshuocommentcolPreviouscomment,jdbcType=INTEGER},
+      </if>
+      <if test="record.shuoshuocommentContent != null" >
+        shuoshuoComment_content = #{record.shuoshuocommentContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update shuoshuocomment
+    set shuoshuoComment_id = #{record.shuoshuocommentId,jdbcType=INTEGER},
+      shuoshuoComment_releaseTime = #{record.shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      shuoshuoComment_promulgator = #{record.shuoshuocommentPromulgator,jdbcType=INTEGER},
+      shuoshuoCommentcol_previousComment = #{record.shuoshuocommentcolPreviouscomment,jdbcType=INTEGER},
+      shuoshuoComment_content = #{record.shuoshuocommentContent,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update shuoshuocomment
+    set shuoshuoComment_id = #{record.shuoshuocommentId,jdbcType=INTEGER},
+      shuoshuoComment_releaseTime = #{record.shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      shuoshuoComment_promulgator = #{record.shuoshuocommentPromulgator,jdbcType=INTEGER},
+      shuoshuoCommentcol_previousComment = #{record.shuoshuocommentcolPreviouscomment,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Shuoshuocomment" >
+    update shuoshuocomment
+    <set >
+      <if test="shuoshuocommentReleasetime != null" >
+        shuoshuoComment_releaseTime = #{shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shuoshuocommentPromulgator != null" >
+        shuoshuoComment_promulgator = #{shuoshuocommentPromulgator,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuocommentcolPreviouscomment != null" >
+        shuoshuoCommentcol_previousComment = #{shuoshuocommentcolPreviouscomment,jdbcType=INTEGER},
+      </if>
+      <if test="shuoshuocommentContent != null" >
+        shuoshuoComment_content = #{shuoshuocommentContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where shuoshuoComment_id = #{shuoshuocommentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pri.Mark.ext.model.Shuoshuocomment" >
+    update shuoshuocomment
+    set shuoshuoComment_releaseTime = #{shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      shuoshuoComment_promulgator = #{shuoshuocommentPromulgator,jdbcType=INTEGER},
+      shuoshuoCommentcol_previousComment = #{shuoshuocommentcolPreviouscomment,jdbcType=INTEGER},
+      shuoshuoComment_content = #{shuoshuocommentContent,jdbcType=LONGVARCHAR}
+    where shuoshuoComment_id = #{shuoshuocommentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Shuoshuocomment" >
+    update shuoshuocomment
+    set shuoshuoComment_releaseTime = #{shuoshuocommentReleasetime,jdbcType=TIMESTAMP},
+      shuoshuoComment_promulgator = #{shuoshuocommentPromulgator,jdbcType=INTEGER},
+      shuoshuoCommentcol_previousComment = #{shuoshuocommentcolPreviouscomment,jdbcType=INTEGER}
+    where shuoshuoComment_id = #{shuoshuocommentId,jdbcType=INTEGER}
+  </update>
+</mapper>

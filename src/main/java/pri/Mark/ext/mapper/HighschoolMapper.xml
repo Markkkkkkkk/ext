@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.HighschoolMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Highschool" >
+    <id column="highSchool_id" property="highschoolId" jdbcType="INTEGER" />
+    <result column="highSchool_name" property="highschoolName" jdbcType="VARCHAR" />
+    <result column="highSchool_town" property="highschoolTown" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    highSchool_id, highSchool_name, highSchool_town
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.HighschoolExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from highschool
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from highschool
+    where highSchool_id = #{highschoolId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from highschool
+    where highSchool_id = #{highschoolId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.HighschoolExample" >
+    delete from highschool
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Highschool" >
+    insert into highschool (highSchool_id, highSchool_name, highSchool_town
+      )
+    values (#{highschoolId,jdbcType=INTEGER}, #{highschoolName,jdbcType=VARCHAR}, #{highschoolTown,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Highschool" >
+    insert into highschool
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="highschoolId != null" >
+        highSchool_id,
+      </if>
+      <if test="highschoolName != null" >
+        highSchool_name,
+      </if>
+      <if test="highschoolTown != null" >
+        highSchool_town,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="highschoolId != null" >
+        #{highschoolId,jdbcType=INTEGER},
+      </if>
+      <if test="highschoolName != null" >
+        #{highschoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="highschoolTown != null" >
+        #{highschoolTown,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.HighschoolExample" resultType="java.lang.Integer" >
+    select count(*) from highschool
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update highschool
+    <set >
+      <if test="record.highschoolId != null" >
+        highSchool_id = #{record.highschoolId,jdbcType=INTEGER},
+      </if>
+      <if test="record.highschoolName != null" >
+        highSchool_name = #{record.highschoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.highschoolTown != null" >
+        highSchool_town = #{record.highschoolTown,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update highschool
+    set highSchool_id = #{record.highschoolId,jdbcType=INTEGER},
+      highSchool_name = #{record.highschoolName,jdbcType=VARCHAR},
+      highSchool_town = #{record.highschoolTown,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Highschool" >
+    update highschool
+    <set >
+      <if test="highschoolName != null" >
+        highSchool_name = #{highschoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="highschoolTown != null" >
+        highSchool_town = #{highschoolTown,jdbcType=INTEGER},
+      </if>
+    </set>
+    where highSchool_id = #{highschoolId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Highschool" >
+    update highschool
+    set highSchool_name = #{highschoolName,jdbcType=VARCHAR},
+      highSchool_town = #{highschoolTown,jdbcType=INTEGER}
+    where highSchool_id = #{highschoolId,jdbcType=INTEGER}
+  </update>
+</mapper>

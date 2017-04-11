@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.RelativeMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Relative" >
+    <id column="relative_id" property="relativeId" jdbcType="INTEGER" />
+    <result column="relative_relation" property="relativeRelation" jdbcType="VARCHAR" />
+    <result column="relative_name" property="relativeName" jdbcType="VARCHAR" />
+    <result column="relative_description" property="relativeDescription" jdbcType="INTEGER" />
+    <result column="relative_nation" property="relativeNation" jdbcType="INTEGER" />
+    <result column="relative_gzdw" property="relativeGzdw" jdbcType="VARCHAR" />
+    <result column="relative_address" property="relativeAddress" jdbcType="INTEGER" />
+    <result column="relative_phone" property="relativePhone" jdbcType="VARCHAR" />
+    <result column="relative_identity" property="relativeIdentity" jdbcType="VARCHAR" />
+    <result column="relative_duty" property="relativeDuty" jdbcType="VARCHAR" />
+    <result column="relative_bloodType" property="relativeBloodtype" jdbcType="INTEGER" />
+    <result column="relative_healthStatus" property="relativeHealthstatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    relative_id, relative_relation, relative_name, relative_description, relative_nation, 
+    relative_gzdw, relative_address, relative_phone, relative_identity, relative_duty, 
+    relative_bloodType, relative_healthStatus
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.RelativeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from relative
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from relative
+    where relative_id = #{relativeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from relative
+    where relative_id = #{relativeId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.RelativeExample" >
+    delete from relative
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Relative" >
+    insert into relative (relative_id, relative_relation, relative_name, 
+      relative_description, relative_nation, relative_gzdw, 
+      relative_address, relative_phone, relative_identity, 
+      relative_duty, relative_bloodType, relative_healthStatus
+      )
+    values (#{relativeId,jdbcType=INTEGER}, #{relativeRelation,jdbcType=VARCHAR}, #{relativeName,jdbcType=VARCHAR}, 
+      #{relativeDescription,jdbcType=INTEGER}, #{relativeNation,jdbcType=INTEGER}, #{relativeGzdw,jdbcType=VARCHAR}, 
+      #{relativeAddress,jdbcType=INTEGER}, #{relativePhone,jdbcType=VARCHAR}, #{relativeIdentity,jdbcType=VARCHAR}, 
+      #{relativeDuty,jdbcType=VARCHAR}, #{relativeBloodtype,jdbcType=INTEGER}, #{relativeHealthstatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Relative" >
+    insert into relative
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="relativeId != null" >
+        relative_id,
+      </if>
+      <if test="relativeRelation != null" >
+        relative_relation,
+      </if>
+      <if test="relativeName != null" >
+        relative_name,
+      </if>
+      <if test="relativeDescription != null" >
+        relative_description,
+      </if>
+      <if test="relativeNation != null" >
+        relative_nation,
+      </if>
+      <if test="relativeGzdw != null" >
+        relative_gzdw,
+      </if>
+      <if test="relativeAddress != null" >
+        relative_address,
+      </if>
+      <if test="relativePhone != null" >
+        relative_phone,
+      </if>
+      <if test="relativeIdentity != null" >
+        relative_identity,
+      </if>
+      <if test="relativeDuty != null" >
+        relative_duty,
+      </if>
+      <if test="relativeBloodtype != null" >
+        relative_bloodType,
+      </if>
+      <if test="relativeHealthstatus != null" >
+        relative_healthStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="relativeId != null" >
+        #{relativeId,jdbcType=INTEGER},
+      </if>
+      <if test="relativeRelation != null" >
+        #{relativeRelation,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeName != null" >
+        #{relativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeDescription != null" >
+        #{relativeDescription,jdbcType=INTEGER},
+      </if>
+      <if test="relativeNation != null" >
+        #{relativeNation,jdbcType=INTEGER},
+      </if>
+      <if test="relativeGzdw != null" >
+        #{relativeGzdw,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeAddress != null" >
+        #{relativeAddress,jdbcType=INTEGER},
+      </if>
+      <if test="relativePhone != null" >
+        #{relativePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeIdentity != null" >
+        #{relativeIdentity,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeDuty != null" >
+        #{relativeDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeBloodtype != null" >
+        #{relativeBloodtype,jdbcType=INTEGER},
+      </if>
+      <if test="relativeHealthstatus != null" >
+        #{relativeHealthstatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.RelativeExample" resultType="java.lang.Integer" >
+    select count(*) from relative
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update relative
+    <set >
+      <if test="record.relativeId != null" >
+        relative_id = #{record.relativeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.relativeRelation != null" >
+        relative_relation = #{record.relativeRelation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativeName != null" >
+        relative_name = #{record.relativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativeDescription != null" >
+        relative_description = #{record.relativeDescription,jdbcType=INTEGER},
+      </if>
+      <if test="record.relativeNation != null" >
+        relative_nation = #{record.relativeNation,jdbcType=INTEGER},
+      </if>
+      <if test="record.relativeGzdw != null" >
+        relative_gzdw = #{record.relativeGzdw,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativeAddress != null" >
+        relative_address = #{record.relativeAddress,jdbcType=INTEGER},
+      </if>
+      <if test="record.relativePhone != null" >
+        relative_phone = #{record.relativePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativeIdentity != null" >
+        relative_identity = #{record.relativeIdentity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativeDuty != null" >
+        relative_duty = #{record.relativeDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativeBloodtype != null" >
+        relative_bloodType = #{record.relativeBloodtype,jdbcType=INTEGER},
+      </if>
+      <if test="record.relativeHealthstatus != null" >
+        relative_healthStatus = #{record.relativeHealthstatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update relative
+    set relative_id = #{record.relativeId,jdbcType=INTEGER},
+      relative_relation = #{record.relativeRelation,jdbcType=VARCHAR},
+      relative_name = #{record.relativeName,jdbcType=VARCHAR},
+      relative_description = #{record.relativeDescription,jdbcType=INTEGER},
+      relative_nation = #{record.relativeNation,jdbcType=INTEGER},
+      relative_gzdw = #{record.relativeGzdw,jdbcType=VARCHAR},
+      relative_address = #{record.relativeAddress,jdbcType=INTEGER},
+      relative_phone = #{record.relativePhone,jdbcType=VARCHAR},
+      relative_identity = #{record.relativeIdentity,jdbcType=VARCHAR},
+      relative_duty = #{record.relativeDuty,jdbcType=VARCHAR},
+      relative_bloodType = #{record.relativeBloodtype,jdbcType=INTEGER},
+      relative_healthStatus = #{record.relativeHealthstatus,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Relative" >
+    update relative
+    <set >
+      <if test="relativeRelation != null" >
+        relative_relation = #{relativeRelation,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeName != null" >
+        relative_name = #{relativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeDescription != null" >
+        relative_description = #{relativeDescription,jdbcType=INTEGER},
+      </if>
+      <if test="relativeNation != null" >
+        relative_nation = #{relativeNation,jdbcType=INTEGER},
+      </if>
+      <if test="relativeGzdw != null" >
+        relative_gzdw = #{relativeGzdw,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeAddress != null" >
+        relative_address = #{relativeAddress,jdbcType=INTEGER},
+      </if>
+      <if test="relativePhone != null" >
+        relative_phone = #{relativePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeIdentity != null" >
+        relative_identity = #{relativeIdentity,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeDuty != null" >
+        relative_duty = #{relativeDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="relativeBloodtype != null" >
+        relative_bloodType = #{relativeBloodtype,jdbcType=INTEGER},
+      </if>
+      <if test="relativeHealthstatus != null" >
+        relative_healthStatus = #{relativeHealthstatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where relative_id = #{relativeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Relative" >
+    update relative
+    set relative_relation = #{relativeRelation,jdbcType=VARCHAR},
+      relative_name = #{relativeName,jdbcType=VARCHAR},
+      relative_description = #{relativeDescription,jdbcType=INTEGER},
+      relative_nation = #{relativeNation,jdbcType=INTEGER},
+      relative_gzdw = #{relativeGzdw,jdbcType=VARCHAR},
+      relative_address = #{relativeAddress,jdbcType=INTEGER},
+      relative_phone = #{relativePhone,jdbcType=VARCHAR},
+      relative_identity = #{relativeIdentity,jdbcType=VARCHAR},
+      relative_duty = #{relativeDuty,jdbcType=VARCHAR},
+      relative_bloodType = #{relativeBloodtype,jdbcType=INTEGER},
+      relative_healthStatus = #{relativeHealthstatus,jdbcType=INTEGER}
+    where relative_id = #{relativeId,jdbcType=INTEGER}
+  </update>
+</mapper>

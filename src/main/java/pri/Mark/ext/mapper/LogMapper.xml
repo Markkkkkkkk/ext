@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.LogMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Log" >
+    <id column="log_id" property="logId" jdbcType="INTEGER" />
+    <result column="log_tableName" property="logTablename" jdbcType="INTEGER" />
+    <result column="log_landTime" property="logLandtime" jdbcType="TIMESTAMP" />
+    <result column="log_outTime" property="logOuttime" jdbcType="TIMESTAMP" />
+    <result column="log_ip" property="logIp" jdbcType="VARCHAR" />
+    <result column="log_operateType" property="logOperatetype" jdbcType="VARCHAR" />
+    <result column="log_browser" property="logBrowser" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="pri.Mark.ext.model.LogWithBLOBs" extends="BaseResultMap" >
+    <result column="log_oldValue" property="logOldvalue" jdbcType="LONGVARCHAR" />
+    <result column="log_newValue" property="logNewvalue" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    log_id, log_tableName, log_landTime, log_outTime, log_ip, log_operateType, log_browser
+  </sql>
+  <sql id="Blob_Column_List" >
+    log_oldValue, log_newValue
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="pri.Mark.ext.model.LogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.LogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.LogExample" >
+    delete from log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.LogWithBLOBs" >
+    insert into log (log_id, log_tableName, log_landTime, 
+      log_outTime, log_ip, log_operateType, 
+      log_browser, log_oldValue, log_newValue
+      )
+    values (#{logId,jdbcType=INTEGER}, #{logTablename,jdbcType=INTEGER}, #{logLandtime,jdbcType=TIMESTAMP}, 
+      #{logOuttime,jdbcType=TIMESTAMP}, #{logIp,jdbcType=VARCHAR}, #{logOperatetype,jdbcType=VARCHAR}, 
+      #{logBrowser,jdbcType=VARCHAR}, #{logOldvalue,jdbcType=LONGVARCHAR}, #{logNewvalue,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.LogWithBLOBs" >
+    insert into log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logId != null" >
+        log_id,
+      </if>
+      <if test="logTablename != null" >
+        log_tableName,
+      </if>
+      <if test="logLandtime != null" >
+        log_landTime,
+      </if>
+      <if test="logOuttime != null" >
+        log_outTime,
+      </if>
+      <if test="logIp != null" >
+        log_ip,
+      </if>
+      <if test="logOperatetype != null" >
+        log_operateType,
+      </if>
+      <if test="logBrowser != null" >
+        log_browser,
+      </if>
+      <if test="logOldvalue != null" >
+        log_oldValue,
+      </if>
+      <if test="logNewvalue != null" >
+        log_newValue,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logId != null" >
+        #{logId,jdbcType=INTEGER},
+      </if>
+      <if test="logTablename != null" >
+        #{logTablename,jdbcType=INTEGER},
+      </if>
+      <if test="logLandtime != null" >
+        #{logLandtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logOuttime != null" >
+        #{logOuttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logIp != null" >
+        #{logIp,jdbcType=VARCHAR},
+      </if>
+      <if test="logOperatetype != null" >
+        #{logOperatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="logBrowser != null" >
+        #{logBrowser,jdbcType=VARCHAR},
+      </if>
+      <if test="logOldvalue != null" >
+        #{logOldvalue,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="logNewvalue != null" >
+        #{logNewvalue,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.LogExample" resultType="java.lang.Integer" >
+    select count(*) from log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update log
+    <set >
+      <if test="record.logId != null" >
+        log_id = #{record.logId,jdbcType=INTEGER},
+      </if>
+      <if test="record.logTablename != null" >
+        log_tableName = #{record.logTablename,jdbcType=INTEGER},
+      </if>
+      <if test="record.logLandtime != null" >
+        log_landTime = #{record.logLandtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.logOuttime != null" >
+        log_outTime = #{record.logOuttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.logIp != null" >
+        log_ip = #{record.logIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logOperatetype != null" >
+        log_operateType = #{record.logOperatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logBrowser != null" >
+        log_browser = #{record.logBrowser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logOldvalue != null" >
+        log_oldValue = #{record.logOldvalue,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.logNewvalue != null" >
+        log_newValue = #{record.logNewvalue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update log
+    set log_id = #{record.logId,jdbcType=INTEGER},
+      log_tableName = #{record.logTablename,jdbcType=INTEGER},
+      log_landTime = #{record.logLandtime,jdbcType=TIMESTAMP},
+      log_outTime = #{record.logOuttime,jdbcType=TIMESTAMP},
+      log_ip = #{record.logIp,jdbcType=VARCHAR},
+      log_operateType = #{record.logOperatetype,jdbcType=VARCHAR},
+      log_browser = #{record.logBrowser,jdbcType=VARCHAR},
+      log_oldValue = #{record.logOldvalue,jdbcType=LONGVARCHAR},
+      log_newValue = #{record.logNewvalue,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update log
+    set log_id = #{record.logId,jdbcType=INTEGER},
+      log_tableName = #{record.logTablename,jdbcType=INTEGER},
+      log_landTime = #{record.logLandtime,jdbcType=TIMESTAMP},
+      log_outTime = #{record.logOuttime,jdbcType=TIMESTAMP},
+      log_ip = #{record.logIp,jdbcType=VARCHAR},
+      log_operateType = #{record.logOperatetype,jdbcType=VARCHAR},
+      log_browser = #{record.logBrowser,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.LogWithBLOBs" >
+    update log
+    <set >
+      <if test="logTablename != null" >
+        log_tableName = #{logTablename,jdbcType=INTEGER},
+      </if>
+      <if test="logLandtime != null" >
+        log_landTime = #{logLandtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logOuttime != null" >
+        log_outTime = #{logOuttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logIp != null" >
+        log_ip = #{logIp,jdbcType=VARCHAR},
+      </if>
+      <if test="logOperatetype != null" >
+        log_operateType = #{logOperatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="logBrowser != null" >
+        log_browser = #{logBrowser,jdbcType=VARCHAR},
+      </if>
+      <if test="logOldvalue != null" >
+        log_oldValue = #{logOldvalue,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="logNewvalue != null" >
+        log_newValue = #{logNewvalue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pri.Mark.ext.model.LogWithBLOBs" >
+    update log
+    set log_tableName = #{logTablename,jdbcType=INTEGER},
+      log_landTime = #{logLandtime,jdbcType=TIMESTAMP},
+      log_outTime = #{logOuttime,jdbcType=TIMESTAMP},
+      log_ip = #{logIp,jdbcType=VARCHAR},
+      log_operateType = #{logOperatetype,jdbcType=VARCHAR},
+      log_browser = #{logBrowser,jdbcType=VARCHAR},
+      log_oldValue = #{logOldvalue,jdbcType=LONGVARCHAR},
+      log_newValue = #{logNewvalue,jdbcType=LONGVARCHAR}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Log" >
+    update log
+    set log_tableName = #{logTablename,jdbcType=INTEGER},
+      log_landTime = #{logLandtime,jdbcType=TIMESTAMP},
+      log_outTime = #{logOuttime,jdbcType=TIMESTAMP},
+      log_ip = #{logIp,jdbcType=VARCHAR},
+      log_operateType = #{logOperatetype,jdbcType=VARCHAR},
+      log_browser = #{logBrowser,jdbcType=VARCHAR}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pri.Mark.ext.dao.DbdescriptionMapper" >
+  <resultMap id="BaseResultMap" type="pri.Mark.ext.model.Dbdescription" >
+    <id column="DBdescription_id" property="dbdescriptionId" jdbcType="INTEGER" />
+    <result column="DBdescription_zd" property="dbdescriptionZd" jdbcType="INTEGER" />
+    <result column="DBdescription_tableName" property="dbdescriptionTablename" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="pri.Mark.ext.model.Dbdescription" extends="BaseResultMap" >
+    <result column="DBdescription_description" property="dbdescriptionDescription" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    DBdescription_id, DBdescription_zd, DBdescription_tableName
+  </sql>
+  <sql id="Blob_Column_List" >
+    DBdescription_description
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="pri.Mark.ext.model.DbdescriptionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dbdescription
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pri.Mark.ext.model.DbdescriptionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from dbdescription
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dbdescription
+    where DBdescription_id = #{dbdescriptionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from dbdescription
+    where DBdescription_id = #{dbdescriptionId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pri.Mark.ext.model.DbdescriptionExample" >
+    delete from dbdescription
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pri.Mark.ext.model.Dbdescription" >
+    insert into dbdescription (DBdescription_id, DBdescription_zd, 
+      DBdescription_tableName, DBdescription_description
+      )
+    values (#{dbdescriptionId,jdbcType=INTEGER}, #{dbdescriptionZd,jdbcType=INTEGER}, 
+      #{dbdescriptionTablename,jdbcType=VARCHAR}, #{dbdescriptionDescription,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pri.Mark.ext.model.Dbdescription" >
+    insert into dbdescription
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="dbdescriptionId != null" >
+        DBdescription_id,
+      </if>
+      <if test="dbdescriptionZd != null" >
+        DBdescription_zd,
+      </if>
+      <if test="dbdescriptionTablename != null" >
+        DBdescription_tableName,
+      </if>
+      <if test="dbdescriptionDescription != null" >
+        DBdescription_description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="dbdescriptionId != null" >
+        #{dbdescriptionId,jdbcType=INTEGER},
+      </if>
+      <if test="dbdescriptionZd != null" >
+        #{dbdescriptionZd,jdbcType=INTEGER},
+      </if>
+      <if test="dbdescriptionTablename != null" >
+        #{dbdescriptionTablename,jdbcType=VARCHAR},
+      </if>
+      <if test="dbdescriptionDescription != null" >
+        #{dbdescriptionDescription,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pri.Mark.ext.model.DbdescriptionExample" resultType="java.lang.Integer" >
+    select count(*) from dbdescription
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update dbdescription
+    <set >
+      <if test="record.dbdescriptionId != null" >
+        DBdescription_id = #{record.dbdescriptionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dbdescriptionZd != null" >
+        DBdescription_zd = #{record.dbdescriptionZd,jdbcType=INTEGER},
+      </if>
+      <if test="record.dbdescriptionTablename != null" >
+        DBdescription_tableName = #{record.dbdescriptionTablename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dbdescriptionDescription != null" >
+        DBdescription_description = #{record.dbdescriptionDescription,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update dbdescription
+    set DBdescription_id = #{record.dbdescriptionId,jdbcType=INTEGER},
+      DBdescription_zd = #{record.dbdescriptionZd,jdbcType=INTEGER},
+      DBdescription_tableName = #{record.dbdescriptionTablename,jdbcType=VARCHAR},
+      DBdescription_description = #{record.dbdescriptionDescription,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update dbdescription
+    set DBdescription_id = #{record.dbdescriptionId,jdbcType=INTEGER},
+      DBdescription_zd = #{record.dbdescriptionZd,jdbcType=INTEGER},
+      DBdescription_tableName = #{record.dbdescriptionTablename,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pri.Mark.ext.model.Dbdescription" >
+    update dbdescription
+    <set >
+      <if test="dbdescriptionZd != null" >
+        DBdescription_zd = #{dbdescriptionZd,jdbcType=INTEGER},
+      </if>
+      <if test="dbdescriptionTablename != null" >
+        DBdescription_tableName = #{dbdescriptionTablename,jdbcType=VARCHAR},
+      </if>
+      <if test="dbdescriptionDescription != null" >
+        DBdescription_description = #{dbdescriptionDescription,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where DBdescription_id = #{dbdescriptionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pri.Mark.ext.model.Dbdescription" >
+    update dbdescription
+    set DBdescription_zd = #{dbdescriptionZd,jdbcType=INTEGER},
+      DBdescription_tableName = #{dbdescriptionTablename,jdbcType=VARCHAR},
+      DBdescription_description = #{dbdescriptionDescription,jdbcType=LONGVARCHAR}
+    where DBdescription_id = #{dbdescriptionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pri.Mark.ext.model.Dbdescription" >
+    update dbdescription
+    set DBdescription_zd = #{dbdescriptionZd,jdbcType=INTEGER},
+      DBdescription_tableName = #{dbdescriptionTablename,jdbcType=VARCHAR}
+    where DBdescription_id = #{dbdescriptionId,jdbcType=INTEGER}
+  </update>
+</mapper>
